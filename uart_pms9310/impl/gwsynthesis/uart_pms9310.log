@@ -4,16 +4,56 @@ Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\baud_ge
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo_top.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\top.v'
-Undeclared symbol 'rd_en', assumed default net type 'wire'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\top.v":36)
+Undeclared symbol 'rd_en', assumed default net type 'wire'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\top.v":37)
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_rx.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_tx.v'
-Compiling module 'top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\top.v":1)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v'
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'
+Analyzing included file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_init.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v'
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'
+Analyzing included file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_expression.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_init.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Analyzing included file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_parameter.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Analyzing Verilog file 'D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\gw_jtag.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 Compiling module 'baud_gen'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\baud_gen.v":1)
-Compiling module 'uart_tx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_tx.v":1)
-Compiling module 'fifo_top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo_top.v":1)
-Compiling module 'uart_rx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_rx.v":1)
 Compiling module 'fifo'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo.v":1)
 Extracting RAM for identifier 'mem'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo.v":16)
+Compiling module 'fifo_top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\fifo_top.v":1)
+Compiling module 'uart_rx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_rx.v":1)
+Compiling module 'top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\top.v":1)
+Compiling module 'uart_tx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_tx.v":1)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v":74)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
+Extracting RAM for identifier '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Extracting RAM for identifier '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
+Compiling module '**'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Compiling module 'GW_JTAG'("D:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\gw_jtag.v":1)
+Compiling module 'gw_gao'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
+Trying to combine GAO to RTL design
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

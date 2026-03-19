@@ -34,7 +34,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         frame_head_state <= 2'b01;
         head_valid <= 1'b0;
     end
-    else if (!phase && rx_done && !rx_err) begin
+    else if (!phase && rx_done && !rx_err && !head_valid) begin
         case (frame_head_state)
             2'b01:begin
                 frame_head_state <= (rx_data == FRAME_HEAD_1) ? 2'b10 : 2'b01;

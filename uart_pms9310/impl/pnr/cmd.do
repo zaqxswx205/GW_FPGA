@@ -3,6 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\src\uart_pms9310.cst
 -cfg D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9310\impl\pnr\device.cfg
+-gao_crc 1000110110011010
 -bit
 -tr
 -ph
@@ -15,3 +16,4 @@
 -correct_hold 1
 -route_maxfan 23
 -global_freq 50.000
+-rtl_gao
