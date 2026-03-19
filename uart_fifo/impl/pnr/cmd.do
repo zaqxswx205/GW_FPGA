@@ -1,0 +1,19 @@
+-d C:\Project\gowin_fpga\uart\uart_fifo\impl\gwsynthesis\uart_fifo.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst C:\Project\gowin_fpga\uart\uart_fifo\src\uart_fifo.cst
+-cfg C:\Project\gowin_fpga\uart\uart_fifo\impl\pnr\device.cfg
+-gao_crc 0011010010000111
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000
+-rtl_gao

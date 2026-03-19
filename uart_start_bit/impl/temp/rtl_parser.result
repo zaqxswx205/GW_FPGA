@@ -1,0 +1,54 @@
+[
+ {
+  "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/top.v",
+    "InstLine" : 38,
+    "InstName" : "u_baud_gen",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/baud_gen.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "baud_gen"
+   },
+   {
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/top.v",
+    "InstLine" : 45,
+    "InstName" : "u_uart_tx",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/uart_tx.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "uart_tx"
+   },
+   {
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/top.v",
+    "InstLine" : 57,
+    "InstName" : "u_fifo_top",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/fifo_top.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "fifo_top",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/fifo_top.v",
+      "InstLine" : 60,
+      "InstName" : "u_uart_rx",
+      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/uart_rx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_rx"
+     },
+     {
+      "InstFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/fifo_top.v",
+      "InstLine" : 71,
+      "InstName" : "u_fifo",
+      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_start_bit/src/fifo.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "fifo"
+     }
+    ]
+   }
+  ]
+ }
+]
