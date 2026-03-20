@@ -1,0 +1,30 @@
+Reading netlist file: "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\gwsynthesis\uart_tx_multi_byte.vg"
+Parsing netlist file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\gwsynthesis\uart_tx_multi_byte.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\src\uart_fifo.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'sys_clk' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\uart_tx_multi_byte.power.html" completed
+Generate file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\uart_tx_multi_byte.pin.html" completed
+Generate file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\uart_tx_multi_byte.rpt.html" completed
+Generate file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\uart_tx_multi_byte.rpt.txt" completed
+Generate file "C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\uart_tx_multi_byte.tr.html" completed
+Fri Mar 20 16:11:06 2026
+
