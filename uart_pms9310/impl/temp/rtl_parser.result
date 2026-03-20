@@ -1,49 +1,49 @@
 [
  {
-  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+  "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
   "InstLine" : 1,
   "InstName" : "top",
-  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+  "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
   "ModuleLine" : 1,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
     "InstLine" : 39,
     "InstName" : "u_baud_gen",
-    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/baud_gen.v",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/baud_gen.v",
     "ModuleLine" : 1,
     "ModuleName" : "baud_gen"
    },
    {
-    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
     "InstLine" : 46,
     "InstName" : "u_uart_tx",
-    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/uart_tx.v",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/uart_tx.v",
     "ModuleLine" : 1,
     "ModuleName" : "uart_tx"
    },
    {
-    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
     "InstLine" : 58,
     "InstName" : "u_fifo_top",
-    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo_top.v",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo_top.v",
     "ModuleLine" : 1,
     "ModuleName" : "fifo_top",
     "SubInsts" : [
      {
-      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo_top.v",
+      "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo_top.v",
       "InstLine" : 60,
       "InstName" : "u_uart_rx",
-      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/uart_rx.v",
+      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/uart_rx.v",
       "ModuleLine" : 1,
       "ModuleName" : "uart_rx"
      },
      {
-      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo_top.v",
+      "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo_top.v",
       "InstLine" : 71,
       "InstName" : "u_fifo",
-      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo.v",
+      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo.v",
       "ModuleLine" : 1,
       "ModuleName" : "fifo"
      }

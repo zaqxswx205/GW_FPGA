@@ -2,27 +2,27 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/baud_gen.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/baud_gen.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/fifo_top.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/fifo_top.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/top.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/top.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/uart_rx.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/uart_rx.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/src/uart_tx.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9310/src/uart_tx.v",
    "Type" : "verilog"
   }
  ],
@@ -30,7 +30,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9310/impl/temp/rtl_parser.result",
+ "ResultFile" : "C:/Project/gowin_fpga/uart/uart_pms9310/impl/temp/rtl_parser.result",
  "Top" : "",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"

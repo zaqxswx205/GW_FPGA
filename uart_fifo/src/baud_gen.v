@@ -6,6 +6,9 @@ module baud_gen (
     output reg rx_clk
 );
 
+// parameter TX_BAUD_CNT_MAX = 12'd2811;
+// parameter RX_BAUD_CNT_MAX = 12'd172;
+
 parameter TX_BAUD_CNT_MAX = 12'd234;
 parameter RX_BAUD_CNT_MAX = 12'd14;
 
