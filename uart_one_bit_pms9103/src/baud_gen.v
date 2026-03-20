@@ -6,10 +6,10 @@ module baud_gen(
     output reg rx_clk
 );
 
-// parameter TX_BAUD_CNT = 12'd2813;
-parameter TX_BAUD_CNT = 12'd234;
-// parameter RX_BAUD_CNT = 9'd175;
-parameter RX_BAUD_CNT = 9'd14;
+parameter TX_BAUD_CNT = 12'd2813;
+//parameter TX_BAUD_CNT = 12'd234;
+parameter RX_BAUD_CNT = 9'd175;
+//parameter RX_BAUD_CNT = 9'd14;
 
 reg [11:0] tx_cnt;
 reg [8:0] rx_cnt;
