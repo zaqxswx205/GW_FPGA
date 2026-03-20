@@ -6,15 +6,11 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/fifo.v",
+   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/mulit_tx_top.v",
    "Type" : "verilog"
   },
   {
    "Path" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/top.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/uart_rx.v",
    "Type" : "verilog"
   },
   {
