@@ -1,28 +1,80 @@
 module gw_gao(
-    \rx_data[7] ,
-    \rx_data[6] ,
-    \rx_data[5] ,
-    \rx_data[4] ,
-    \rx_data[3] ,
-    \rx_data[2] ,
-    \rx_data[1] ,
-    \rx_data[0] ,
-    \rd_data[7] ,
-    \rd_data[6] ,
-    \rd_data[5] ,
-    \rd_data[4] ,
-    \rd_data[3] ,
-    \rd_data[2] ,
-    \rd_data[1] ,
-    \rd_data[0] ,
-    rx_done,
-    rx_err,
-    full,
-    empty,
-    wr_en,
-    tx_set,
-    rd_en,
-    tx_done,
+    \cnt[25] ,
+    \cnt[24] ,
+    \cnt[23] ,
+    \cnt[22] ,
+    \cnt[21] ,
+    \cnt[20] ,
+    \cnt[19] ,
+    \cnt[18] ,
+    \cnt[17] ,
+    \cnt[16] ,
+    \cnt[15] ,
+    \cnt[14] ,
+    \cnt[13] ,
+    \cnt[12] ,
+    \cnt[11] ,
+    \cnt[10] ,
+    \cnt[9] ,
+    \cnt[8] ,
+    \cnt[7] ,
+    \cnt[6] ,
+    \cnt[5] ,
+    \cnt[4] ,
+    \cnt[3] ,
+    \cnt[2] ,
+    \cnt[1] ,
+    \cnt[0] ,
+    \u_mulit_tx_top/data_set_buf[47] ,
+    \u_mulit_tx_top/data_set_buf[46] ,
+    \u_mulit_tx_top/data_set_buf[45] ,
+    \u_mulit_tx_top/data_set_buf[44] ,
+    \u_mulit_tx_top/data_set_buf[43] ,
+    \u_mulit_tx_top/data_set_buf[42] ,
+    \u_mulit_tx_top/data_set_buf[41] ,
+    \u_mulit_tx_top/data_set_buf[40] ,
+    \u_mulit_tx_top/data_set_buf[39] ,
+    \u_mulit_tx_top/data_set_buf[38] ,
+    \u_mulit_tx_top/data_set_buf[37] ,
+    \u_mulit_tx_top/data_set_buf[36] ,
+    \u_mulit_tx_top/data_set_buf[35] ,
+    \u_mulit_tx_top/data_set_buf[34] ,
+    \u_mulit_tx_top/data_set_buf[33] ,
+    \u_mulit_tx_top/data_set_buf[32] ,
+    \u_mulit_tx_top/data_set_buf[31] ,
+    \u_mulit_tx_top/data_set_buf[30] ,
+    \u_mulit_tx_top/data_set_buf[29] ,
+    \u_mulit_tx_top/data_set_buf[28] ,
+    \u_mulit_tx_top/data_set_buf[27] ,
+    \u_mulit_tx_top/data_set_buf[26] ,
+    \u_mulit_tx_top/data_set_buf[25] ,
+    \u_mulit_tx_top/data_set_buf[24] ,
+    \u_mulit_tx_top/data_set_buf[23] ,
+    \u_mulit_tx_top/data_set_buf[22] ,
+    \u_mulit_tx_top/data_set_buf[21] ,
+    \u_mulit_tx_top/data_set_buf[20] ,
+    \u_mulit_tx_top/data_set_buf[19] ,
+    \u_mulit_tx_top/data_set_buf[18] ,
+    \u_mulit_tx_top/data_set_buf[17] ,
+    \u_mulit_tx_top/data_set_buf[16] ,
+    \u_mulit_tx_top/data_set_buf[15] ,
+    \u_mulit_tx_top/data_set_buf[14] ,
+    \u_mulit_tx_top/data_set_buf[13] ,
+    \u_mulit_tx_top/data_set_buf[12] ,
+    \u_mulit_tx_top/data_set_buf[11] ,
+    \u_mulit_tx_top/data_set_buf[10] ,
+    \u_mulit_tx_top/data_set_buf[9] ,
+    \u_mulit_tx_top/data_set_buf[8] ,
+    \u_mulit_tx_top/data_set_buf[7] ,
+    \u_mulit_tx_top/data_set_buf[6] ,
+    \u_mulit_tx_top/data_set_buf[5] ,
+    \u_mulit_tx_top/data_set_buf[4] ,
+    \u_mulit_tx_top/data_set_buf[3] ,
+    \u_mulit_tx_top/data_set_buf[2] ,
+    \u_mulit_tx_top/data_set_buf[1] ,
+    \u_mulit_tx_top/data_set_buf[0] ,
+    data_set,
+    send_set,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -30,60 +82,164 @@ module gw_gao(
     tdo_pad_o
 );
 
-input \rx_data[7] ;
-input \rx_data[6] ;
-input \rx_data[5] ;
-input \rx_data[4] ;
-input \rx_data[3] ;
-input \rx_data[2] ;
-input \rx_data[1] ;
-input \rx_data[0] ;
-input \rd_data[7] ;
-input \rd_data[6] ;
-input \rd_data[5] ;
-input \rd_data[4] ;
-input \rd_data[3] ;
-input \rd_data[2] ;
-input \rd_data[1] ;
-input \rd_data[0] ;
-input rx_done;
-input rx_err;
-input full;
-input empty;
-input wr_en;
-input tx_set;
-input rd_en;
-input tx_done;
+input \cnt[25] ;
+input \cnt[24] ;
+input \cnt[23] ;
+input \cnt[22] ;
+input \cnt[21] ;
+input \cnt[20] ;
+input \cnt[19] ;
+input \cnt[18] ;
+input \cnt[17] ;
+input \cnt[16] ;
+input \cnt[15] ;
+input \cnt[14] ;
+input \cnt[13] ;
+input \cnt[12] ;
+input \cnt[11] ;
+input \cnt[10] ;
+input \cnt[9] ;
+input \cnt[8] ;
+input \cnt[7] ;
+input \cnt[6] ;
+input \cnt[5] ;
+input \cnt[4] ;
+input \cnt[3] ;
+input \cnt[2] ;
+input \cnt[1] ;
+input \cnt[0] ;
+input \u_mulit_tx_top/data_set_buf[47] ;
+input \u_mulit_tx_top/data_set_buf[46] ;
+input \u_mulit_tx_top/data_set_buf[45] ;
+input \u_mulit_tx_top/data_set_buf[44] ;
+input \u_mulit_tx_top/data_set_buf[43] ;
+input \u_mulit_tx_top/data_set_buf[42] ;
+input \u_mulit_tx_top/data_set_buf[41] ;
+input \u_mulit_tx_top/data_set_buf[40] ;
+input \u_mulit_tx_top/data_set_buf[39] ;
+input \u_mulit_tx_top/data_set_buf[38] ;
+input \u_mulit_tx_top/data_set_buf[37] ;
+input \u_mulit_tx_top/data_set_buf[36] ;
+input \u_mulit_tx_top/data_set_buf[35] ;
+input \u_mulit_tx_top/data_set_buf[34] ;
+input \u_mulit_tx_top/data_set_buf[33] ;
+input \u_mulit_tx_top/data_set_buf[32] ;
+input \u_mulit_tx_top/data_set_buf[31] ;
+input \u_mulit_tx_top/data_set_buf[30] ;
+input \u_mulit_tx_top/data_set_buf[29] ;
+input \u_mulit_tx_top/data_set_buf[28] ;
+input \u_mulit_tx_top/data_set_buf[27] ;
+input \u_mulit_tx_top/data_set_buf[26] ;
+input \u_mulit_tx_top/data_set_buf[25] ;
+input \u_mulit_tx_top/data_set_buf[24] ;
+input \u_mulit_tx_top/data_set_buf[23] ;
+input \u_mulit_tx_top/data_set_buf[22] ;
+input \u_mulit_tx_top/data_set_buf[21] ;
+input \u_mulit_tx_top/data_set_buf[20] ;
+input \u_mulit_tx_top/data_set_buf[19] ;
+input \u_mulit_tx_top/data_set_buf[18] ;
+input \u_mulit_tx_top/data_set_buf[17] ;
+input \u_mulit_tx_top/data_set_buf[16] ;
+input \u_mulit_tx_top/data_set_buf[15] ;
+input \u_mulit_tx_top/data_set_buf[14] ;
+input \u_mulit_tx_top/data_set_buf[13] ;
+input \u_mulit_tx_top/data_set_buf[12] ;
+input \u_mulit_tx_top/data_set_buf[11] ;
+input \u_mulit_tx_top/data_set_buf[10] ;
+input \u_mulit_tx_top/data_set_buf[9] ;
+input \u_mulit_tx_top/data_set_buf[8] ;
+input \u_mulit_tx_top/data_set_buf[7] ;
+input \u_mulit_tx_top/data_set_buf[6] ;
+input \u_mulit_tx_top/data_set_buf[5] ;
+input \u_mulit_tx_top/data_set_buf[4] ;
+input \u_mulit_tx_top/data_set_buf[3] ;
+input \u_mulit_tx_top/data_set_buf[2] ;
+input \u_mulit_tx_top/data_set_buf[1] ;
+input \u_mulit_tx_top/data_set_buf[0] ;
+input data_set;
+input send_set;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire \rx_data[7] ;
-wire \rx_data[6] ;
-wire \rx_data[5] ;
-wire \rx_data[4] ;
-wire \rx_data[3] ;
-wire \rx_data[2] ;
-wire \rx_data[1] ;
-wire \rx_data[0] ;
-wire \rd_data[7] ;
-wire \rd_data[6] ;
-wire \rd_data[5] ;
-wire \rd_data[4] ;
-wire \rd_data[3] ;
-wire \rd_data[2] ;
-wire \rd_data[1] ;
-wire \rd_data[0] ;
-wire rx_done;
-wire rx_err;
-wire full;
-wire empty;
-wire wr_en;
-wire tx_set;
-wire rd_en;
-wire tx_done;
+wire \cnt[25] ;
+wire \cnt[24] ;
+wire \cnt[23] ;
+wire \cnt[22] ;
+wire \cnt[21] ;
+wire \cnt[20] ;
+wire \cnt[19] ;
+wire \cnt[18] ;
+wire \cnt[17] ;
+wire \cnt[16] ;
+wire \cnt[15] ;
+wire \cnt[14] ;
+wire \cnt[13] ;
+wire \cnt[12] ;
+wire \cnt[11] ;
+wire \cnt[10] ;
+wire \cnt[9] ;
+wire \cnt[8] ;
+wire \cnt[7] ;
+wire \cnt[6] ;
+wire \cnt[5] ;
+wire \cnt[4] ;
+wire \cnt[3] ;
+wire \cnt[2] ;
+wire \cnt[1] ;
+wire \cnt[0] ;
+wire \u_mulit_tx_top/data_set_buf[47] ;
+wire \u_mulit_tx_top/data_set_buf[46] ;
+wire \u_mulit_tx_top/data_set_buf[45] ;
+wire \u_mulit_tx_top/data_set_buf[44] ;
+wire \u_mulit_tx_top/data_set_buf[43] ;
+wire \u_mulit_tx_top/data_set_buf[42] ;
+wire \u_mulit_tx_top/data_set_buf[41] ;
+wire \u_mulit_tx_top/data_set_buf[40] ;
+wire \u_mulit_tx_top/data_set_buf[39] ;
+wire \u_mulit_tx_top/data_set_buf[38] ;
+wire \u_mulit_tx_top/data_set_buf[37] ;
+wire \u_mulit_tx_top/data_set_buf[36] ;
+wire \u_mulit_tx_top/data_set_buf[35] ;
+wire \u_mulit_tx_top/data_set_buf[34] ;
+wire \u_mulit_tx_top/data_set_buf[33] ;
+wire \u_mulit_tx_top/data_set_buf[32] ;
+wire \u_mulit_tx_top/data_set_buf[31] ;
+wire \u_mulit_tx_top/data_set_buf[30] ;
+wire \u_mulit_tx_top/data_set_buf[29] ;
+wire \u_mulit_tx_top/data_set_buf[28] ;
+wire \u_mulit_tx_top/data_set_buf[27] ;
+wire \u_mulit_tx_top/data_set_buf[26] ;
+wire \u_mulit_tx_top/data_set_buf[25] ;
+wire \u_mulit_tx_top/data_set_buf[24] ;
+wire \u_mulit_tx_top/data_set_buf[23] ;
+wire \u_mulit_tx_top/data_set_buf[22] ;
+wire \u_mulit_tx_top/data_set_buf[21] ;
+wire \u_mulit_tx_top/data_set_buf[20] ;
+wire \u_mulit_tx_top/data_set_buf[19] ;
+wire \u_mulit_tx_top/data_set_buf[18] ;
+wire \u_mulit_tx_top/data_set_buf[17] ;
+wire \u_mulit_tx_top/data_set_buf[16] ;
+wire \u_mulit_tx_top/data_set_buf[15] ;
+wire \u_mulit_tx_top/data_set_buf[14] ;
+wire \u_mulit_tx_top/data_set_buf[13] ;
+wire \u_mulit_tx_top/data_set_buf[12] ;
+wire \u_mulit_tx_top/data_set_buf[11] ;
+wire \u_mulit_tx_top/data_set_buf[10] ;
+wire \u_mulit_tx_top/data_set_buf[9] ;
+wire \u_mulit_tx_top/data_set_buf[8] ;
+wire \u_mulit_tx_top/data_set_buf[7] ;
+wire \u_mulit_tx_top/data_set_buf[6] ;
+wire \u_mulit_tx_top/data_set_buf[5] ;
+wire \u_mulit_tx_top/data_set_buf[4] ;
+wire \u_mulit_tx_top/data_set_buf[3] ;
+wire \u_mulit_tx_top/data_set_buf[2] ;
+wire \u_mulit_tx_top/data_set_buf[1] ;
+wire \u_mulit_tx_top/data_set_buf[0] ;
+wire data_set;
+wire send_set;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -158,11 +314,10 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i({\rx_data[7] ,\rx_data[6] ,\rx_data[5] ,\rx_data[4] ,\rx_data[3] ,\rx_data[2] ,\rx_data[1] ,\rx_data[0] }),
-    .trig1_i({\rd_data[7] ,\rd_data[6] ,\rd_data[5] ,\rd_data[4] ,\rd_data[3] ,\rd_data[2] ,\rd_data[1] ,\rd_data[0] }),
-    .trig2_i(tx_set),
-    .trig3_i(rd_en),
-    .data_i({\rx_data[7] ,\rx_data[6] ,\rx_data[5] ,\rx_data[4] ,\rx_data[3] ,\rx_data[2] ,\rx_data[1] ,\rx_data[0] ,\rd_data[7] ,\rd_data[6] ,\rd_data[5] ,\rd_data[4] ,\rd_data[3] ,\rd_data[2] ,\rd_data[1] ,\rd_data[0] ,rx_done,rx_err,full,empty,wr_en,tx_set,rd_en,tx_done}),
+    .trig0_i(data_set),
+    .trig1_i(send_set),
+    .trig2_i({\cnt[25] ,\cnt[24] ,\cnt[23] ,\cnt[22] ,\cnt[21] ,\cnt[20] ,\cnt[19] ,\cnt[18] ,\cnt[17] ,\cnt[16] ,\cnt[15] ,\cnt[14] ,\cnt[13] ,\cnt[12] ,\cnt[11] ,\cnt[10] ,\cnt[9] ,\cnt[8] ,\cnt[7] ,\cnt[6] ,\cnt[5] ,\cnt[4] ,\cnt[3] ,\cnt[2] ,\cnt[1] ,\cnt[0] }),
+    .data_i({\cnt[25] ,\cnt[24] ,\cnt[23] ,\cnt[22] ,\cnt[21] ,\cnt[20] ,\cnt[19] ,\cnt[18] ,\cnt[17] ,\cnt[16] ,\cnt[15] ,\cnt[14] ,\cnt[13] ,\cnt[12] ,\cnt[11] ,\cnt[10] ,\cnt[9] ,\cnt[8] ,\cnt[7] ,\cnt[6] ,\cnt[5] ,\cnt[4] ,\cnt[3] ,\cnt[2] ,\cnt[1] ,\cnt[0] ,\u_mulit_tx_top/data_set_buf[47] ,\u_mulit_tx_top/data_set_buf[46] ,\u_mulit_tx_top/data_set_buf[45] ,\u_mulit_tx_top/data_set_buf[44] ,\u_mulit_tx_top/data_set_buf[43] ,\u_mulit_tx_top/data_set_buf[42] ,\u_mulit_tx_top/data_set_buf[41] ,\u_mulit_tx_top/data_set_buf[40] ,\u_mulit_tx_top/data_set_buf[39] ,\u_mulit_tx_top/data_set_buf[38] ,\u_mulit_tx_top/data_set_buf[37] ,\u_mulit_tx_top/data_set_buf[36] ,\u_mulit_tx_top/data_set_buf[35] ,\u_mulit_tx_top/data_set_buf[34] ,\u_mulit_tx_top/data_set_buf[33] ,\u_mulit_tx_top/data_set_buf[32] ,\u_mulit_tx_top/data_set_buf[31] ,\u_mulit_tx_top/data_set_buf[30] ,\u_mulit_tx_top/data_set_buf[29] ,\u_mulit_tx_top/data_set_buf[28] ,\u_mulit_tx_top/data_set_buf[27] ,\u_mulit_tx_top/data_set_buf[26] ,\u_mulit_tx_top/data_set_buf[25] ,\u_mulit_tx_top/data_set_buf[24] ,\u_mulit_tx_top/data_set_buf[23] ,\u_mulit_tx_top/data_set_buf[22] ,\u_mulit_tx_top/data_set_buf[21] ,\u_mulit_tx_top/data_set_buf[20] ,\u_mulit_tx_top/data_set_buf[19] ,\u_mulit_tx_top/data_set_buf[18] ,\u_mulit_tx_top/data_set_buf[17] ,\u_mulit_tx_top/data_set_buf[16] ,\u_mulit_tx_top/data_set_buf[15] ,\u_mulit_tx_top/data_set_buf[14] ,\u_mulit_tx_top/data_set_buf[13] ,\u_mulit_tx_top/data_set_buf[12] ,\u_mulit_tx_top/data_set_buf[11] ,\u_mulit_tx_top/data_set_buf[10] ,\u_mulit_tx_top/data_set_buf[9] ,\u_mulit_tx_top/data_set_buf[8] ,\u_mulit_tx_top/data_set_buf[7] ,\u_mulit_tx_top/data_set_buf[6] ,\u_mulit_tx_top/data_set_buf[5] ,\u_mulit_tx_top/data_set_buf[4] ,\u_mulit_tx_top/data_set_buf[3] ,\u_mulit_tx_top/data_set_buf[2] ,\u_mulit_tx_top/data_set_buf[1] ,\u_mulit_tx_top/data_set_buf[0] ,data_set,send_set}),
     .clk_i(sys_clk)
 );
 

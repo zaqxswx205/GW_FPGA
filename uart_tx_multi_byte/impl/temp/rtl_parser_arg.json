@@ -12,6 +12,10 @@
   {
    "Path" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/top.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/mulit_tx_top.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

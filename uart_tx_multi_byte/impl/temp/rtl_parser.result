@@ -9,19 +9,29 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/top.v",
-    "InstLine" : 124,
+    "InstLine" : 33,
+    "InstName" : "u_mulit_tx_top",
+    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/mulit_tx_top.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "mulit_tx_top",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/mulit_tx_top.v",
+      "InstLine" : 112,
+      "InstName" : "u_uart_tx",
+      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/uart_tx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_tx"
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/top.v",
+    "InstLine" : 43,
     "InstName" : "u_baud_gen",
     "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/baud_gen.v",
     "ModuleLine" : 1,
     "ModuleName" : "baud_gen"
-   },
-   {
-    "InstFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/top.v",
-    "InstLine" : 130,
-    "InstName" : "u_uart_tx",
-    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_tx_multi_byte/src/uart_tx.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "uart_tx"
    }
   ]
  }

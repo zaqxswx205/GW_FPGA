@@ -3,6 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\Project\gowin_fpga\uart\uart_tx_multi_byte\src\uart_fifo.cst
 -cfg C:\Project\gowin_fpga\uart\uart_tx_multi_byte\impl\pnr\device.cfg
+-gao_crc 1100000110010001
 -bit
 -tr
 -ph
@@ -15,3 +16,4 @@
 -correct_hold 1
 -route_maxfan 23
 -global_freq 50.000
+-rtl_gao
