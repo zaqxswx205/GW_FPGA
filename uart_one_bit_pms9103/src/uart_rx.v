@@ -11,11 +11,6 @@ module uart_rx(
     output reg [7:0] rx_data
 );
 
-parameter IDLE = 4'b0001;
-parameter START = 4'b0010;
-parameter RECEIVE = 4'b0100;
-parameter STOP = 4'b1000;
-
 reg [1:0] rx_sync;
 wire rx_syn = rx_sync[1];
 
@@ -35,7 +30,7 @@ reg [7:0] rx_data_buf;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
-        rx_state <= IDLE;
+        rx_state <= 4'b0001;
         rx_done <= 1'b0;
         rx_err <= 1'b0;
         bit_cnt <= 4'd0;
@@ -43,26 +38,27 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     end
     else if (rx_clk) begin
         case (rx_state)
-            IDLE:begin
+            4'b0001:begin
                 rx_done <= 1'b0;
+                bit_cnt <= 4'd0;
                 sample_cnt <= 4'd0;
                 rx_err <= 1'b0;
-                rx_state <= (rx_syn) ? IDLE : START;
+                rx_state <= (rx_syn) ? 4'b0001 : 4'b0010;
             end
-            START:begin
+            4'b0010:begin
                 if (sample_cnt == 4'd7) begin
                     sample_cnt <= sample_cnt + 1'b1;
-//                    rx_err <= rx_syn;
+                    rx_err <= rx_syn;
                 end
                 else if (sample_cnt == 4'd15) begin
-                    rx_state <= (rx_err) ? IDLE : RECEIVE;
+                    rx_state <= (rx_err) ? 4'b0001 : 4'b0100;
                     sample_cnt <= 4'd0;
                 end
                 else begin
                     sample_cnt <= sample_cnt + 1'b1;
                 end
             end
-            RECEIVE:begin
+            4'b0100:begin
                 if (sample_cnt == 4'd7) begin
                     rx_data_buf <= {rx_syn, rx_data_buf[7:1]};
                     sample_cnt <= sample_cnt + 1'b1;
@@ -71,33 +67,31 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                     sample_cnt <= 4'd0;
                     if (bit_cnt == 4'd7) begin
                         bit_cnt <= 4'd0;
-                        rx_state <= STOP;
+                        rx_state <= 4'b1000;
                     end
                     else begin
                         bit_cnt <= bit_cnt + 1'b1;
-                        rx_state <= RECEIVE;
+                        rx_state <= 4'b0100;
                     end
                 end
                 else begin
                     sample_cnt <= sample_cnt + 1'b1;
                 end
             end
-            STOP:begin
+            4'b1000:begin
                 if (sample_cnt == 4'd7) begin
                     sample_cnt <= sample_cnt + 1'b1;
                     rx_err <= !rx_syn;
                 end
                 else if (sample_cnt == 4'd15) begin
-                    bit_cnt <= 4'd0;
+                    rx_state <= 4'b0001;
                     sample_cnt <= 4'd0;
                     if (rx_err) begin
                         rx_done <= 1'b0;
-                        rx_state <= IDLE;
                     end
                     else begin
                         rx_data <= rx_data_buf;
                         rx_done <= 1'b1;
-                        rx_state <= (!rx_syn) ? START : IDLE;
                     end
                 end
                 else begin
