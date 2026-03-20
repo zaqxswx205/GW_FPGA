@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="1" Lut="2" T_Register="587(1)" T_Alu="15(0)" T_Lut="667(2)" T_Bsram="17(0)">
- <SubModule name="gw_gao_inst_0" Register="512" Alu="15" Lut="567" Bsram="17" T_Register="512(512)" T_Alu="15(15)" T_Lut="567(567)" T_Bsram="17(17)"/>
- <SubModule name="u_baud_gen" Register="22" Lut="36" T_Register="22(22)" T_Lut="36(36)"/>
- <SubModule name="u_uart_tx" Register="20" Lut="25" T_Register="20(20)" T_Lut="25(25)"/>
- <SubModule name="u_uart_rx" Register="32" Lut="37" T_Register="32(32)" T_Lut="37(37)"/>
+<Module name="top" Register="1" Lut="2" T_Register="588(1)" T_Alu="15(0)" T_Lut="673(2)" T_Bsram="17(0)">
+ <SubModule name="gw_gao_inst_0" Register="512" Alu="15" Lut="572" Bsram="17" T_Register="512(512)" T_Alu="15(15)" T_Lut="572(572)" T_Bsram="17(17)"/>
+ <SubModule name="u_baud_gen" Register="23" Lut="37" T_Register="23(23)" T_Lut="37(37)"/>
+ <SubModule name="u_uart_tx" Register="20" Lut="27" T_Register="20(20)" T_Lut="27(27)"/>
+ <SubModule name="u_uart_rx" Register="32" Lut="35" T_Register="32(32)" T_Lut="35(35)"/>
 </Module>
