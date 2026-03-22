@@ -1,8 +1,8 @@
--d C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg
+-d D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst
--cfg C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\device.cfg
+-cst D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst
+-cfg D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\device.cfg
 -bit
 -tr
 -ph

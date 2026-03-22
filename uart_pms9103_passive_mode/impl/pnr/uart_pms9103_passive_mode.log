@@ -1,7 +1,7 @@
-Reading netlist file: "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg"
-Parsing netlist file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg" completed
+Reading netlist file: "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg"
+Parsing netlist file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg" completed
 Processing netlist completed
-Reading constraint file: "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst"
+Reading constraint file: "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -21,10 +21,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.power.html" completed
-Generate file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.pin.html" completed
-Generate file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.rpt.html" completed
-Generate file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.rpt.txt" completed
-Generate file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.tr.html" completed
-Fri Mar 20 18:03:13 2026
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.power.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.pin.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.rpt.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.rpt.txt" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\pnr\uart_pms9103_passive_mode.tr.html" completed
+Sun Mar 22 21:16:09 2026
 

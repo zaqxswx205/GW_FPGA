@@ -4,16 +4,18 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
-        <File path="C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\baud_gen.v" type="verilog"/>
-        <File path="C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\mulit_tx_top.v" type="verilog"/>
-        <File path="C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\top.v" type="verilog"/>
-        <File path="C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_tx.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\baud_gen.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\mulit_tx_top.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\top.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_tx.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\loop_fifo.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_rx.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
         <Option type="global_freq" value="50.000"/>
         <Option type="looplimit" value="2000"/>
-        <Option type="output_file" value="C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg"/>
+        <Option type="output_file" value="D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
         <Option type="vcc" value="1.2"/>

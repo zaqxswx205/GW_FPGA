@@ -9,8 +9,8 @@ module mulit_tx_top(
     output tx
 );
 
-parameter [47:0] DATA_SET_1 = {8'h42, 8'h4d, 8'hE1, 8'h00, 8'h00, 8'h20};
-parameter [47:0] DATA_SET_2 = {8'h42, 8'h4d, 8'hE2, 8'h00, 8'h00, 8'h71};
+parameter [47:0] DATA_SET_1 = {8'h42, 8'h4d, 8'hE1, 8'h00, 8'h00, 8'h01, 8'h70};
+parameter [47:0] DATA_SET_2 = {8'h42, 8'h4d, 8'hE2, 8'h00, 8'h00, 8'h01, 8'h71};
 
 parameter IDLE = 9'b00_000_0001;
 parameter BYTE_1 = 9'b00_000_0010;//42

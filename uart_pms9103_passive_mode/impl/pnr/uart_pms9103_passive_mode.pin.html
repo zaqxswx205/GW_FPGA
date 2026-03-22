@@ -50,11 +50,11 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg</td>
+<td>D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst</td>
+<td>D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_pms9103_passive_mode.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
@@ -78,7 +78,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Mar 20 18:03:13 2026
+<td>Sun Mar 22 21:16:09 2026
 </td>
 </tr>
 <tr>
@@ -149,10 +149,10 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">rx</td>
 <td>-</td>
-<td>18/2</td>
+<td>37/2</td>
 <td>Y</td>
 <td>in</td>
-<td>IOB2[B]</td>
+<td>IOB31[A]</td>
 <td>-</td>
 <td>LVCMOS33</td>
 <td>NA</td>
@@ -166,12 +166,31 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">tx</td>
+<td class="label">tx_1</td>
 <td>-</td>
 <td>17/2</td>
 <td>Y</td>
 <td>out</td>
 <td>IOB2[A]</td>
+<td>-</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">tx</td>
+<td>-</td>
+<td>38/2</td>
+<td>Y</td>
+<td>out</td>
+<td>IOB31[B]</td>
 <td>-</td>
 <td>LVCMOS33</td>
 <td>8</td>
@@ -564,7 +583,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">17/2</td>
-<td>tx</td>
+<td>tx_1</td>
 <td>out</td>
 <td>IOB2[A]</td>
 <td>-</td>
@@ -581,7 +600,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">18/2</td>
-<td>rx</td>
+<td>-</td>
 <td>in</td>
 <td>IOB2[B]</td>
 <td>-</td>
@@ -836,7 +855,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">37/2</td>
-<td>-</td>
+<td>rx</td>
 <td>in</td>
 <td>IOB31[A]</td>
 <td>-</td>
@@ -853,16 +872,16 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">38/2</td>
-<td>-</td>
-<td>in</td>
+<td>tx</td>
+<td>out</td>
 <td>IOB31[B]</td>
 <td>-</td>
 <td>LVCMOS33</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>

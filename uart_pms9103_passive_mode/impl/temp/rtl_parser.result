@@ -1,37 +1,87 @@
 [
  {
-  "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/top.v",
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
   "InstLine" : 1,
   "InstName" : "top",
-  "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/top.v",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
   "ModuleLine" : 1,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/top.v",
-    "InstLine" : 64,
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
+    "InstLine" : 85,
     "InstName" : "u_mulit_tx_top",
-    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/mulit_tx_top.v",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/mulit_tx_top.v",
     "ModuleLine" : 1,
     "ModuleName" : "mulit_tx_top",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/mulit_tx_top.v",
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/mulit_tx_top.v",
       "InstLine" : 125,
       "InstName" : "u_uart_tx",
-      "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/uart_tx.v",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_tx.v",
       "ModuleLine" : 1,
       "ModuleName" : "uart_tx"
      }
     ]
    },
    {
-    "InstFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/top.v",
-    "InstLine" : 86,
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
+    "InstLine" : 96,
+    "InstName" : "u_uart_rx",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
+    "InstLine" : 107,
     "InstName" : "u_baud_gen",
-    "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_pms9103_passive_mode/src/baud_gen.v",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/baud_gen.v",
     "ModuleLine" : 1,
     "ModuleName" : "baud_gen"
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
+    "InstLine" : 114,
+    "InstName" : "u_loop_fifo",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/loop_fifo.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "loop_fifo"
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/top.v",
+    "InstLine" : 127,
+    "InstName" : "u_uart_tx",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_tx.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "uart_tx"
+   }
+  ]
+ },
+ {
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx_fifo_top.v",
+  "InstLine" : 1,
+  "InstName" : "uart_rx_fifo_top",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx_fifo_top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "uart_rx_fifo_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx_fifo_top.v",
+    "InstLine" : 21,
+    "InstName" : "u_uart_rx",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/uart_rx_fifo_top.v",
+    "InstLine" : 32,
+    "InstName" : "u_loop_fifo",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/uart_pms9103_passive_mode/src/loop_fifo.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "loop_fifo"
    }
   ]
  }

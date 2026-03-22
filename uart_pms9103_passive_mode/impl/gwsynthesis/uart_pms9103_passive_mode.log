@@ -1,16 +1,20 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\baud_gen.v'
-Analyzing Verilog file 'C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\mulit_tx_top.v'
-Analyzing Verilog file 'C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\top.v'
-Analyzing Verilog file 'C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_tx.v'
-Compiling module 'top'("C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\top.v":1)
-Compiling module 'mulit_tx_top'("C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\mulit_tx_top.v":1)
-Compiling module 'uart_tx'("C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\uart_tx.v":1)
-Compiling module 'baud_gen'("C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\baud_gen.v":1)
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\baud_gen.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\mulit_tx_top.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\top.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_tx.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\loop_fifo.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_rx.v'
+Compiling module 'top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\top.v":1)
+Compiling module 'mulit_tx_top'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\mulit_tx_top.v":1)
+Compiling module 'uart_tx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_tx.v":1)
+Compiling module 'uart_rx'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\uart_rx.v":1)
+Compiling module 'baud_gen'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\baud_gen.v":1)
+Compiling module 'loop_fifo'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\loop_fifo.v":1)
+Extracting RAM for identifier 'mem'("D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\src\loop_fifo.v":14)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input rx is unused("C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\src\top.v":5)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -26,6 +30,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg" completed
-[100%] Generate report file "C:\Project\gowin_fpga\uart\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode_syn.rpt.html" completed
+[95%] Generate netlist file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode.vg" completed
+[100%] Generate report file "D:\Project\fpga\gw-fpga\GW_FPGA\uart_pms9103_passive_mode\impl\gwsynthesis\uart_pms9103_passive_mode_syn.rpt.html" completed
 GowinSynthesis finish

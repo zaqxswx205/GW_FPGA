@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="6" Lut="10" T_Register="57(6)" T_Lut="100(10)">
- <SubModule name="u_mulit_tx_top" Register="19" Lut="42" T_Register="38(19)" T_Lut="68(42)">
+<Module name="top" Register="34" Lut="71" T_Register="160(34)" T_Alu="16(0)" T_Lut="255(71)" T_Ssram="4(0)">
+ <SubModule name="u_mulit_tx_top" Register="20" Lut="45" T_Register="39(20)" T_Lut="71(45)">
   <SubModule name="u_uart_tx" Register="19" Lut="26" T_Register="19(19)" T_Lut="26(26)"/>
  </SubModule>
- <SubModule name="u_baud_gen" Register="13" Lut="22" T_Register="13(13)" T_Lut="22(22)"/>
+ <SubModule name="u_uart_rx" Register="32" Lut="37" T_Register="32(32)" T_Lut="37(37)"/>
+ <SubModule name="u_baud_gen" Register="23" Lut="34" T_Register="23(23)" T_Lut="34(34)"/>
+ <SubModule name="u_loop_fifo" Register="12" Alu="16" Lut="17" Ssram="4" T_Register="12(12)" T_Alu="16(16)" T_Lut="17(17)" T_Ssram="4(4)"/>
+ <SubModule name="u_uart_tx" Register="20" Lut="25" T_Register="20(20)" T_Lut="25(25)"/>
 </Module>
