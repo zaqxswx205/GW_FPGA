@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Project/gowin_fpga/uart/uart_rx/src/uart_rx.v",
+  "InstLine" : 1,
+  "InstName" : "uart_rx",
+  "ModuleFile" : "C:/Project/gowin_fpga/uart/uart_rx/src/uart_rx.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "uart_rx"
+ }
+]

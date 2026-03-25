@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="uart_rx" Register="42" Lut="56" T_Register="506(42)" T_Alu="16(0)" T_Lut="625(56)" T_Bsram="21(0)">
+ <SubModule name="gw_gao_inst_0" Register="464" Alu="16" Lut="569" Bsram="21" T_Register="464(464)" T_Alu="16(16)" T_Lut="569(569)" T_Bsram="21(21)"/>
+</Module>

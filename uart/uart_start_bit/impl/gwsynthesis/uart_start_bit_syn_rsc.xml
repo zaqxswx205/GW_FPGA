@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="6" Lut="28" T_Register="664(6)" T_Alu="32(0)" T_Lut="803(28)" T_Bsram="26(0)" T_Ssram="4(0)">
+ <SubModule name="gw_gao_inst_0" Register="572" Alu="16" Lut="650" Bsram="26" T_Register="572(572)" T_Alu="16(16)" T_Lut="650(650)" T_Bsram="26(26)"/>
+ <SubModule name="u_uart_tx" Register="32" Lut="53" T_Register="32(32)" T_Lut="53(53)"/>
+ <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
+ <SubModule name="u_fifo" Register="12" Alu="16" Lut="19" Ssram="4" T_Register="12(12)" T_Alu="16(16)" T_Lut="19(19)" T_Ssram="4(4)"/>
+</Module>

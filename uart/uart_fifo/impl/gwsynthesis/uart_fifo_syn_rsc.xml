@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="1" Lut="7" T_Register="88(1)" T_Alu="16(0)" T_Lut="123(7)" T_Ssram="4(0)">
+ <SubModule name="u_uart_tx" Register="33" Lut="48" T_Register="33(33)" T_Lut="48(48)"/>
+ <SubModule name="u_uart_rx" Register="42" Lut="55" T_Register="42(42)" T_Lut="55(55)"/>
+ <SubModule name="u_fifo" Register="12" Alu="16" Lut="13" Ssram="4" T_Register="12(12)" T_Alu="16(16)" T_Lut="13(13)" T_Ssram="4(4)"/>
+</Module>
