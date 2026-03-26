@@ -2,10 +2,6 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "C:/Project/gowin_fpga/github_project/pms9103m/src/fifo.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Project/gowin_fpga/github_project/pms9103m/src/top.v",
    "Type" : "verilog"
   },
@@ -14,7 +10,7 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Project/gowin_fpga/github_project/pms9103m/src/uart_tx.v",
+   "Path" : "C:/Project/gowin_fpga/github_project/pms9103m/src/pms9103_data.v",
    "Type" : "verilog"
   }
  ],
