@@ -1,0 +1,30 @@
+[
+ {
+  "InstFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/top.v",
+    "InstLine" : 10,
+    "InstName" : "u_ze08_ch2o_data",
+    "ModuleFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/ze08_ch2o_data.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ze08_ch2o_data",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/ze08_ch2o_data.v",
+      "InstLine" : 91,
+      "InstName" : "u_uart_rx",
+      "ModuleFile" : "C:/Project/gowin_fpga/github_project/ze08_ch2o/src/uart_rx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_rx"
+     }
+    ]
+   }
+  ]
+ }
+]

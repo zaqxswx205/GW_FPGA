@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" T_Register="369(0)" T_Alu="13(0)" T_Lut="498(0)" T_Bsram="2(0)">
+ <SubModule name="gw_gao_inst_0" Register="301" Alu="13" Lut="391" Bsram="2" T_Register="301(301)" T_Alu="13(13)" T_Lut="391(391)" T_Bsram="2(2)"/>
+ <SubModule name="u_ze08_ch2o_data" Register="26" Lut="54" T_Register="68(26)" T_Lut="107(54)">
+  <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
+ </SubModule>
+</Module>
