@@ -1,20 +1,10 @@
 [
  {
-  "InstFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_one_bit.v",
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/i2c/i2c_write/src/i2c_single_cmd.v",
   "InstLine" : 1,
-  "InstName" : "i2c_write_one_bit",
-  "ModuleFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_one_bit.v",
+  "InstName" : "i2c_single_cmd",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/i2c/i2c_write/src/i2c_single_cmd.v",
   "ModuleLine" : 1,
-  "ModuleName" : "i2c_write_one_bit",
-  "SubInsts" : [
-   {
-    "InstFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_one_bit.v",
-    "InstLine" : 11,
-    "InstName" : "u_i2c_write_addr",
-    "ModuleFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_addr.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "i2c_write_addr"
-   }
-  ]
+  "ModuleName" : "i2c_single_cmd"
  }
 ]

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Module name="i2c_write_one_bit" T_Register="308(0)" T_Alu="13(0)" T_Lut="439(0)" T_Bsram="2(0)">
- <SubModule name="gw_gao_inst_0" Register="298" Alu="13" Lut="421" Bsram="2" T_Register="298(298)" T_Alu="13(13)" T_Lut="421(421)" T_Bsram="2(2)"/>
- <SubModule name="u_i2c_write_addr" Register="10" Lut="18" T_Register="10(10)" T_Lut="18(18)"/>
-</Module>
