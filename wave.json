@@ -1,0 +1,5 @@
+{ signal: [
+  { name: "i2c_clk",         wave: "p.....|..." },
+  {name: "scl",              wave: "p.....|..." },
+  { name: "sda",     wave: "0.1..0|1.0" }
+]}

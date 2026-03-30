@@ -9,11 +9,19 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_one_bit.v",
-    "InstLine" : 11,
-    "InstName" : "u_i2c_write_addr",
-    "ModuleFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_addr.v",
+    "InstLine" : 118,
+    "InstName" : "u_i2c_send",
+    "ModuleFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_send.v",
     "ModuleLine" : 1,
-    "ModuleName" : "i2c_write_addr"
+    "ModuleName" : "i2c_send"
+   },
+   {
+    "InstFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_write_one_bit.v",
+    "InstLine" : 131,
+    "InstName" : "u_i2c_clock",
+    "ModuleFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write/src/i2c_clock.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "i2c_clock"
    }
   ]
  }

@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\Project\gowin_fpga\github_project\i2c\i2c_write\src\i2c_write.cst
 -cfg C:\Project\gowin_fpga\github_project\i2c\i2c_write\impl\pnr\device.cfg
--gao_crc 1110011101000011
+-gao_crc 0000000100110111
 -bit
 -tr
 -ph

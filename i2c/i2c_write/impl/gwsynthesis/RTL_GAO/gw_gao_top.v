@@ -1,14 +1,51 @@
 module gw_gao(
-    \u_i2c_write_addr/state[3] ,
-    \u_i2c_write_addr/state[2] ,
-    \u_i2c_write_addr/state[1] ,
-    \u_i2c_write_addr/state[0] ,
-    \u_i2c_write_addr/bit_cnt[3] ,
-    \u_i2c_write_addr/bit_cnt[2] ,
-    \u_i2c_write_addr/bit_cnt[1] ,
-    \u_i2c_write_addr/bit_cnt[0] ,
+    \cur_state[5] ,
+    \cur_state[4] ,
+    \cur_state[3] ,
+    \cur_state[2] ,
+    \cur_state[1] ,
+    \cur_state[0] ,
+    \next_state[5] ,
+    \next_state[4] ,
+    \next_state[3] ,
+    \next_state[2] ,
+    \next_state[1] ,
+    \next_state[0] ,
+    \data[7] ,
+    \data[6] ,
+    \data[5] ,
+    \data[4] ,
+    \data[3] ,
+    \data[2] ,
+    \data[1] ,
+    \data[0] ,
+    \bit_cnt[3] ,
+    \bit_cnt[2] ,
+    \bit_cnt[1] ,
+    \bit_cnt[0] ,
+    \u_i2c_send/state[10] ,
+    \u_i2c_send/state[9] ,
+    \u_i2c_send/state[8] ,
+    \u_i2c_send/state[7] ,
+    \u_i2c_send/state[6] ,
+    \u_i2c_send/state[5] ,
+    \u_i2c_send/state[4] ,
+    \u_i2c_send/state[3] ,
+    \u_i2c_send/state[2] ,
+    \u_i2c_send/state[1] ,
+    \u_i2c_send/state[0] ,
     scl,
     sda,
+    i2c_clk,
+    scl_buf,
+    sda_out,
+    sda_en,
+    sda_in,
+    start,
+    send_scl,
+    done,
+    need_release,
+    send_sda,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -16,32 +53,106 @@ module gw_gao(
     tdo_pad_o
 );
 
-input \u_i2c_write_addr/state[3] ;
-input \u_i2c_write_addr/state[2] ;
-input \u_i2c_write_addr/state[1] ;
-input \u_i2c_write_addr/state[0] ;
-input \u_i2c_write_addr/bit_cnt[3] ;
-input \u_i2c_write_addr/bit_cnt[2] ;
-input \u_i2c_write_addr/bit_cnt[1] ;
-input \u_i2c_write_addr/bit_cnt[0] ;
+input \cur_state[5] ;
+input \cur_state[4] ;
+input \cur_state[3] ;
+input \cur_state[2] ;
+input \cur_state[1] ;
+input \cur_state[0] ;
+input \next_state[5] ;
+input \next_state[4] ;
+input \next_state[3] ;
+input \next_state[2] ;
+input \next_state[1] ;
+input \next_state[0] ;
+input \data[7] ;
+input \data[6] ;
+input \data[5] ;
+input \data[4] ;
+input \data[3] ;
+input \data[2] ;
+input \data[1] ;
+input \data[0] ;
+input \bit_cnt[3] ;
+input \bit_cnt[2] ;
+input \bit_cnt[1] ;
+input \bit_cnt[0] ;
+input \u_i2c_send/state[10] ;
+input \u_i2c_send/state[9] ;
+input \u_i2c_send/state[8] ;
+input \u_i2c_send/state[7] ;
+input \u_i2c_send/state[6] ;
+input \u_i2c_send/state[5] ;
+input \u_i2c_send/state[4] ;
+input \u_i2c_send/state[3] ;
+input \u_i2c_send/state[2] ;
+input \u_i2c_send/state[1] ;
+input \u_i2c_send/state[0] ;
 input scl;
 input sda;
+input i2c_clk;
+input scl_buf;
+input sda_out;
+input sda_en;
+input sda_in;
+input start;
+input send_scl;
+input done;
+input need_release;
+input send_sda;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire \u_i2c_write_addr/state[3] ;
-wire \u_i2c_write_addr/state[2] ;
-wire \u_i2c_write_addr/state[1] ;
-wire \u_i2c_write_addr/state[0] ;
-wire \u_i2c_write_addr/bit_cnt[3] ;
-wire \u_i2c_write_addr/bit_cnt[2] ;
-wire \u_i2c_write_addr/bit_cnt[1] ;
-wire \u_i2c_write_addr/bit_cnt[0] ;
+wire \cur_state[5] ;
+wire \cur_state[4] ;
+wire \cur_state[3] ;
+wire \cur_state[2] ;
+wire \cur_state[1] ;
+wire \cur_state[0] ;
+wire \next_state[5] ;
+wire \next_state[4] ;
+wire \next_state[3] ;
+wire \next_state[2] ;
+wire \next_state[1] ;
+wire \next_state[0] ;
+wire \data[7] ;
+wire \data[6] ;
+wire \data[5] ;
+wire \data[4] ;
+wire \data[3] ;
+wire \data[2] ;
+wire \data[1] ;
+wire \data[0] ;
+wire \bit_cnt[3] ;
+wire \bit_cnt[2] ;
+wire \bit_cnt[1] ;
+wire \bit_cnt[0] ;
+wire \u_i2c_send/state[10] ;
+wire \u_i2c_send/state[9] ;
+wire \u_i2c_send/state[8] ;
+wire \u_i2c_send/state[7] ;
+wire \u_i2c_send/state[6] ;
+wire \u_i2c_send/state[5] ;
+wire \u_i2c_send/state[4] ;
+wire \u_i2c_send/state[3] ;
+wire \u_i2c_send/state[2] ;
+wire \u_i2c_send/state[1] ;
+wire \u_i2c_send/state[0] ;
 wire scl;
 wire sda;
+wire i2c_clk;
+wire scl_buf;
+wire sda_out;
+wire sda_en;
+wire sda_in;
+wire start;
+wire send_scl;
+wire done;
+wire need_release;
+wire send_sda;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -116,8 +227,10 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i({\u_i2c_write_addr/state[3] ,\u_i2c_write_addr/state[2] ,\u_i2c_write_addr/state[1] ,\u_i2c_write_addr/state[0] }),
-    .data_i({\u_i2c_write_addr/state[3] ,\u_i2c_write_addr/state[2] ,\u_i2c_write_addr/state[1] ,\u_i2c_write_addr/state[0] ,\u_i2c_write_addr/bit_cnt[3] ,\u_i2c_write_addr/bit_cnt[2] ,\u_i2c_write_addr/bit_cnt[1] ,\u_i2c_write_addr/bit_cnt[0] ,scl,sda}),
+    .trig0_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] }),
+    .trig1_i({\u_i2c_send/state[10] ,\u_i2c_send/state[9] ,\u_i2c_send/state[8] ,\u_i2c_send/state[7] ,\u_i2c_send/state[6] ,\u_i2c_send/state[5] ,\u_i2c_send/state[4] ,\u_i2c_send/state[3] ,\u_i2c_send/state[2] ,\u_i2c_send/state[1] ,\u_i2c_send/state[0] }),
+    .trig2_i(done),
+    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\next_state[5] ,\next_state[4] ,\next_state[3] ,\next_state[2] ,\next_state[1] ,\next_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\bit_cnt[3] ,\bit_cnt[2] ,\bit_cnt[1] ,\bit_cnt[0] ,\u_i2c_send/state[10] ,\u_i2c_send/state[9] ,\u_i2c_send/state[8] ,\u_i2c_send/state[7] ,\u_i2c_send/state[6] ,\u_i2c_send/state[5] ,\u_i2c_send/state[4] ,\u_i2c_send/state[3] ,\u_i2c_send/state[2] ,\u_i2c_send/state[1] ,\u_i2c_send/state[0] ,scl,sda,i2c_clk,scl_buf,sda_out,sda_en,sda_in,start,send_scl,done,need_release,send_sda}),
     .clk_i(sys_clk)
 );
 
