@@ -1,5 +1,21 @@
-{ signal: [
-  { name: "i2c_clk",         wave: "p.....|..." },
-  {name: "scl",              wave: "p.....|..." },
-  { name: "sda",     wave: "0.1..0|1.0" }
-]}
+{
+  signal: [
+    {name : "i2c_clk",
+      wave: "p......................"
+    },
+    { name: "SCL",
+      wave: "1010101010101010101"
+    },
+    { name: "SDA",
+      wave: "10.=.=.=.=.=.=.=.=01",
+      data: [ "D7","D6","D5","D4","D3","D2","D1","D0","ACK" ]
+    },
+    {},
+    { name: "Step",
+      wave: "02.3.3.3.3.3.3.3.3.4.0",
+      data: [ "START","D7","D6","D5","D4","D3","D2","D1","D0","ACK","STOP" ]
+    }
+  ],
+  head: { text: "I2C 逐 bit 时序" },
+  config: { hscale: 2 }
+}

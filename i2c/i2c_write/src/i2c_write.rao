@@ -2,7 +2,7 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="sys_clk" trig_type="0" storage_depth="4096" window_num="1" capture_amount="4096" implementation="0" trigger_pos="0" module_name="i2c_write_one_bit" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+    <AoCore index="0" sample_clock="sys_clk" trig_type="0" storage_depth="8192" window_num="1" capture_amount="8192" implementation="0" trigger_pos="0" module_name="i2c_write_one_bit" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
         <SignalList>
             <Bus capture_enable="true" name="cur_state[5:0]">
                 <Signal>cur_state[5]</Signal>
@@ -22,37 +22,29 @@
                 <Signal>data[1]</Signal>
                 <Signal>data[0]</Signal>
             </Bus>
-            <Bus capture_enable="true" name="bit_cnt[3:0]">
-                <Signal>bit_cnt[3]</Signal>
-                <Signal>bit_cnt[2]</Signal>
-                <Signal>bit_cnt[1]</Signal>
-                <Signal>bit_cnt[0]</Signal>
-            </Bus>
-            <Bus capture_enable="true" name="u_i2c_send/state[10:0]">
-                <Signal>u_i2c_send/state[10]</Signal>
-                <Signal>u_i2c_send/state[9]</Signal>
-                <Signal>u_i2c_send/state[8]</Signal>
-                <Signal>u_i2c_send/state[7]</Signal>
-                <Signal>u_i2c_send/state[6]</Signal>
-                <Signal>u_i2c_send/state[5]</Signal>
-                <Signal>u_i2c_send/state[4]</Signal>
-                <Signal>u_i2c_send/state[3]</Signal>
-                <Signal>u_i2c_send/state[2]</Signal>
-                <Signal>u_i2c_send/state[1]</Signal>
-                <Signal>u_i2c_send/state[0]</Signal>
+            <Bus capture_enable="true" name="u_i2c_send/cur_state[10:0]">
+                <Signal>u_i2c_send/cur_state[10]</Signal>
+                <Signal>u_i2c_send/cur_state[9]</Signal>
+                <Signal>u_i2c_send/cur_state[8]</Signal>
+                <Signal>u_i2c_send/cur_state[7]</Signal>
+                <Signal>u_i2c_send/cur_state[6]</Signal>
+                <Signal>u_i2c_send/cur_state[5]</Signal>
+                <Signal>u_i2c_send/cur_state[4]</Signal>
+                <Signal>u_i2c_send/cur_state[3]</Signal>
+                <Signal>u_i2c_send/cur_state[2]</Signal>
+                <Signal>u_i2c_send/cur_state[1]</Signal>
+                <Signal>u_i2c_send/cur_state[0]</Signal>
             </Bus>
             <Signal capture_enable="true">scl</Signal>
             <Signal capture_enable="true">sda</Signal>
             <Signal capture_enable="true">i2c_clk</Signal>
-            <Signal capture_enable="true">scl_buf</Signal>
-            <Signal capture_enable="true">sda_out</Signal>
-            <Signal capture_enable="true">sda_en</Signal>
-            <Signal capture_enable="true">sda_in</Signal>
-            <Signal capture_enable="true">start</Signal>
-            <Signal capture_enable="true">send_scl</Signal>
             <Signal capture_enable="true">done</Signal>
             <Signal capture_enable="true">need_release</Signal>
             <Signal capture_enable="true">send_sda</Signal>
+            <Signal capture_enable="true">sda_out</Signal>
+            <Signal capture_enable="true">write_one_sda</Signal>
+            <Signal capture_enable="true">sda_in_en</Signal>
+            <Signal capture_enable="true">sda_in</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
@@ -69,18 +61,18 @@
             </Trigger>
             <Trigger index="1">
                 <SignalList>
-                    <Bus restorename="u_i2c_send/state[10:0]">
-                        <Signal>u_i2c_send/state[10]</Signal>
-                        <Signal>u_i2c_send/state[9]</Signal>
-                        <Signal>u_i2c_send/state[8]</Signal>
-                        <Signal>u_i2c_send/state[7]</Signal>
-                        <Signal>u_i2c_send/state[6]</Signal>
-                        <Signal>u_i2c_send/state[5]</Signal>
-                        <Signal>u_i2c_send/state[4]</Signal>
-                        <Signal>u_i2c_send/state[3]</Signal>
-                        <Signal>u_i2c_send/state[2]</Signal>
-                        <Signal>u_i2c_send/state[1]</Signal>
-                        <Signal>u_i2c_send/state[0]</Signal>
+                    <Bus restorename="u_i2c_send/cur_state[10:0]">
+                        <Signal>u_i2c_send/cur_state[10]</Signal>
+                        <Signal>u_i2c_send/cur_state[9]</Signal>
+                        <Signal>u_i2c_send/cur_state[8]</Signal>
+                        <Signal>u_i2c_send/cur_state[7]</Signal>
+                        <Signal>u_i2c_send/cur_state[6]</Signal>
+                        <Signal>u_i2c_send/cur_state[5]</Signal>
+                        <Signal>u_i2c_send/cur_state[4]</Signal>
+                        <Signal>u_i2c_send/cur_state[3]</Signal>
+                        <Signal>u_i2c_send/cur_state[2]</Signal>
+                        <Signal>u_i2c_send/cur_state[1]</Signal>
+                        <Signal>u_i2c_send/cur_state[0]</Signal>
                     </Bus>
                 </SignalList>
             </Trigger>
@@ -127,5 +119,5 @@
             <Expression>M2</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1111101011111100</GAO_ID>
+    <GAO_ID>0101001110100101</GAO_ID>
 </GAO_CONFIG>
