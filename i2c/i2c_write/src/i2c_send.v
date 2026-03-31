@@ -41,7 +41,7 @@ end
 always @(posedge i2c_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         state <= IDLE;
-        need_release <= 1'b0;
+        need_release <= 1'b1;
         done <= 1'b0;
     end
     else begin
@@ -52,34 +52,44 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
             end
             BIT_0_SEND:begin
                 sda_out <= data[7];
+                state <= BIT_1_SEND;
             end
             BIT_1_SEND:begin
                 sda_out <= data[6];
+                state <= BIT_2_SEND;
             end
             BIT_2_SEND:begin
                 sda_out <= data[5];
+                state <= BIT_3_SEND;
             end
             BIT_3_SEND:begin
                 sda_out <= data[4];
+                state <= BIT_4_SEND;
             end
             BIT_4_SEND:begin
                 sda_out <= data[3];
+                state <= BIT_5_SEND;
             end
             BIT_5_SEND:begin
                 sda_out <= data[2];
+                state <= BIT_6_SEND;
             end
             BIT_6_SEND:begin
                 sda_out <= data[1];
+                state <= BIT_7_SEND;
             end
             BIT_7_SEND:begin
                 sda_out <= data[0];
+                state <= ACK;
             end
             ACK:begin
                 need_release <= 1'b1;
+                state <= STOP_SEND;
             end
             STOP_SEND:begin
                 need_release <= 1'b0;
                 done <= 1'b1;
+                state <= IDLE;
             end
             default:begin
                 state <= IDLE;

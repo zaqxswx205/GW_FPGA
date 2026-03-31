@@ -12,14 +12,6 @@
                 <Signal>cur_state[1]</Signal>
                 <Signal>cur_state[0]</Signal>
             </Bus>
-            <Bus capture_enable="true" name="next_state[5:0]">
-                <Signal>next_state[5]</Signal>
-                <Signal>next_state[4]</Signal>
-                <Signal>next_state[3]</Signal>
-                <Signal>next_state[2]</Signal>
-                <Signal>next_state[1]</Signal>
-                <Signal>next_state[0]</Signal>
-            </Bus>
             <Bus capture_enable="true" name="data[7:0]">
                 <Signal>data[7]</Signal>
                 <Signal>data[6]</Signal>
@@ -135,5 +127,5 @@
             <Expression>M2</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>0000000100110111</GAO_ID>
+    <GAO_ID>1111101011111100</GAO_ID>
 </GAO_CONFIG>

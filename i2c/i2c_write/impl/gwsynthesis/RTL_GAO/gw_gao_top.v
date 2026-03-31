@@ -5,12 +5,6 @@ module gw_gao(
     \cur_state[2] ,
     \cur_state[1] ,
     \cur_state[0] ,
-    \next_state[5] ,
-    \next_state[4] ,
-    \next_state[3] ,
-    \next_state[2] ,
-    \next_state[1] ,
-    \next_state[0] ,
     \data[7] ,
     \data[6] ,
     \data[5] ,
@@ -59,12 +53,6 @@ input \cur_state[3] ;
 input \cur_state[2] ;
 input \cur_state[1] ;
 input \cur_state[0] ;
-input \next_state[5] ;
-input \next_state[4] ;
-input \next_state[3] ;
-input \next_state[2] ;
-input \next_state[1] ;
-input \next_state[0] ;
 input \data[7] ;
 input \data[6] ;
 input \data[5] ;
@@ -112,12 +100,6 @@ wire \cur_state[3] ;
 wire \cur_state[2] ;
 wire \cur_state[1] ;
 wire \cur_state[0] ;
-wire \next_state[5] ;
-wire \next_state[4] ;
-wire \next_state[3] ;
-wire \next_state[2] ;
-wire \next_state[1] ;
-wire \next_state[0] ;
 wire \data[7] ;
 wire \data[6] ;
 wire \data[5] ;
@@ -230,7 +212,7 @@ ao_top_0  u_la0_top(
     .trig0_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] }),
     .trig1_i({\u_i2c_send/state[10] ,\u_i2c_send/state[9] ,\u_i2c_send/state[8] ,\u_i2c_send/state[7] ,\u_i2c_send/state[6] ,\u_i2c_send/state[5] ,\u_i2c_send/state[4] ,\u_i2c_send/state[3] ,\u_i2c_send/state[2] ,\u_i2c_send/state[1] ,\u_i2c_send/state[0] }),
     .trig2_i(done),
-    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\next_state[5] ,\next_state[4] ,\next_state[3] ,\next_state[2] ,\next_state[1] ,\next_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\bit_cnt[3] ,\bit_cnt[2] ,\bit_cnt[1] ,\bit_cnt[0] ,\u_i2c_send/state[10] ,\u_i2c_send/state[9] ,\u_i2c_send/state[8] ,\u_i2c_send/state[7] ,\u_i2c_send/state[6] ,\u_i2c_send/state[5] ,\u_i2c_send/state[4] ,\u_i2c_send/state[3] ,\u_i2c_send/state[2] ,\u_i2c_send/state[1] ,\u_i2c_send/state[0] ,scl,sda,i2c_clk,scl_buf,sda_out,sda_en,sda_in,start,send_scl,done,need_release,send_sda}),
+    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\bit_cnt[3] ,\bit_cnt[2] ,\bit_cnt[1] ,\bit_cnt[0] ,\u_i2c_send/state[10] ,\u_i2c_send/state[9] ,\u_i2c_send/state[8] ,\u_i2c_send/state[7] ,\u_i2c_send/state[6] ,\u_i2c_send/state[5] ,\u_i2c_send/state[4] ,\u_i2c_send/state[3] ,\u_i2c_send/state[2] ,\u_i2c_send/state[1] ,\u_i2c_send/state[0] ,scl,sda,i2c_clk,scl_buf,sda_out,sda_en,sda_in,start,send_scl,done,need_release,send_sda}),
     .clk_i(sys_clk)
 );
 
