@@ -5,6 +5,10 @@ module gw_gao(
     \cur_state[2] ,
     \cur_state[1] ,
     \cur_state[0] ,
+    scl,
+    sda,
+    i2c_clk,
+    done,
     \data[7] ,
     \data[6] ,
     \data[5] ,
@@ -13,27 +17,6 @@ module gw_gao(
     \data[2] ,
     \data[1] ,
     \data[0] ,
-    \u_i2c_send/cur_state[10] ,
-    \u_i2c_send/cur_state[9] ,
-    \u_i2c_send/cur_state[8] ,
-    \u_i2c_send/cur_state[7] ,
-    \u_i2c_send/cur_state[6] ,
-    \u_i2c_send/cur_state[5] ,
-    \u_i2c_send/cur_state[4] ,
-    \u_i2c_send/cur_state[3] ,
-    \u_i2c_send/cur_state[2] ,
-    \u_i2c_send/cur_state[1] ,
-    \u_i2c_send/cur_state[0] ,
-    scl,
-    sda,
-    i2c_clk,
-    done,
-    need_release,
-    send_sda,
-    sda_out,
-    write_one_sda,
-    sda_in_en,
-    sda_in,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -47,6 +30,10 @@ input \cur_state[3] ;
 input \cur_state[2] ;
 input \cur_state[1] ;
 input \cur_state[0] ;
+input scl;
+input sda;
+input i2c_clk;
+input done;
 input \data[7] ;
 input \data[6] ;
 input \data[5] ;
@@ -55,27 +42,6 @@ input \data[3] ;
 input \data[2] ;
 input \data[1] ;
 input \data[0] ;
-input \u_i2c_send/cur_state[10] ;
-input \u_i2c_send/cur_state[9] ;
-input \u_i2c_send/cur_state[8] ;
-input \u_i2c_send/cur_state[7] ;
-input \u_i2c_send/cur_state[6] ;
-input \u_i2c_send/cur_state[5] ;
-input \u_i2c_send/cur_state[4] ;
-input \u_i2c_send/cur_state[3] ;
-input \u_i2c_send/cur_state[2] ;
-input \u_i2c_send/cur_state[1] ;
-input \u_i2c_send/cur_state[0] ;
-input scl;
-input sda;
-input i2c_clk;
-input done;
-input need_release;
-input send_sda;
-input sda_out;
-input write_one_sda;
-input sda_in_en;
-input sda_in;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
@@ -88,6 +54,10 @@ wire \cur_state[3] ;
 wire \cur_state[2] ;
 wire \cur_state[1] ;
 wire \cur_state[0] ;
+wire scl;
+wire sda;
+wire i2c_clk;
+wire done;
 wire \data[7] ;
 wire \data[6] ;
 wire \data[5] ;
@@ -96,27 +66,6 @@ wire \data[3] ;
 wire \data[2] ;
 wire \data[1] ;
 wire \data[0] ;
-wire \u_i2c_send/cur_state[10] ;
-wire \u_i2c_send/cur_state[9] ;
-wire \u_i2c_send/cur_state[8] ;
-wire \u_i2c_send/cur_state[7] ;
-wire \u_i2c_send/cur_state[6] ;
-wire \u_i2c_send/cur_state[5] ;
-wire \u_i2c_send/cur_state[4] ;
-wire \u_i2c_send/cur_state[3] ;
-wire \u_i2c_send/cur_state[2] ;
-wire \u_i2c_send/cur_state[1] ;
-wire \u_i2c_send/cur_state[0] ;
-wire scl;
-wire sda;
-wire i2c_clk;
-wire done;
-wire need_release;
-wire send_sda;
-wire sda_out;
-wire write_one_sda;
-wire sda_in_en;
-wire sda_in;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -191,10 +140,8 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] }),
-    .trig1_i({\u_i2c_send/cur_state[10] ,\u_i2c_send/cur_state[9] ,\u_i2c_send/cur_state[8] ,\u_i2c_send/cur_state[7] ,\u_i2c_send/cur_state[6] ,\u_i2c_send/cur_state[5] ,\u_i2c_send/cur_state[4] ,\u_i2c_send/cur_state[3] ,\u_i2c_send/cur_state[2] ,\u_i2c_send/cur_state[1] ,\u_i2c_send/cur_state[0] }),
-    .trig2_i(done),
-    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\u_i2c_send/cur_state[10] ,\u_i2c_send/cur_state[9] ,\u_i2c_send/cur_state[8] ,\u_i2c_send/cur_state[7] ,\u_i2c_send/cur_state[6] ,\u_i2c_send/cur_state[5] ,\u_i2c_send/cur_state[4] ,\u_i2c_send/cur_state[3] ,\u_i2c_send/cur_state[2] ,\u_i2c_send/cur_state[1] ,\u_i2c_send/cur_state[0] ,scl,sda,i2c_clk,done,need_release,send_sda,sda_out,write_one_sda,sda_in_en,sda_in}),
+    .trig0_i(done),
+    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,scl,sda,i2c_clk,done,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] }),
     .clk_i(sys_clk)
 );
 

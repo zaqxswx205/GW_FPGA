@@ -49,7 +49,7 @@ always @(*) begin
     case (cur_state)
         IDLE:next_state = START;
         START:next_state = (!sda) ? ADDR : START;
-        ADDR:next_state = (done) ? STOP : ADDR;
+        ADDR:next_state = (done) ? CONTROL_BYTE : ADDR;
         CONTROL_BYTE:next_state = (done) ? COMMAND_BYTE : CONTROL_BYTE;
         COMMAND_BYTE:next_state = (done) ? STOP : COMMAND_BYTE;
         STOP:next_state = IDLE;
