@@ -3,6 +3,7 @@ module i2c_send_one_byte(
     input sys_rst_n,
 
     input i2c_clk,
+    input i2c_clk_half,
     input [7:0] data,
     input start,
 
@@ -13,6 +14,7 @@ module i2c_send_one_byte(
 );
 
 parameter IDLE = 11'b000_0000_0001;
+parameter BIT_7 = 11'b000_0000_0010;
 parameter STOP = 11'b100_0000_0000;
 
 
@@ -55,6 +57,18 @@ end
 
 always @(posedge i2c_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
+        sub_scl <= 1'b1;
+    end
+    else begin
+        case (cur_state)
+            IDLE: sub_scl <= (start) ? 1'b0 : 1'b1;
+            BIT_7: sub_scl <= (sda == data[7]) ? 1'b1 : 1'b0;
+        endcase
+    end
+end
+
+always @(posedge i2c_clk or negedge sys_rst_n) begin
+    if (!sys_rst_n) begin
         need_release <= 1'b0;
         done <= 1'b0;
     end
@@ -63,6 +77,10 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
             IDLE:begin
                 need_release <= 1'b0;
                 done <= 1'b0;
+            end
+            BIT_7:begin
+                need_release <= 1'b0;
+                sda <= data[7];
             end
             STOP:begin
                 need_release <= 1'b0;
