@@ -45,7 +45,6 @@ end
 
 //i2c_clock
 wire i2c_clk;
-wire i2c_clk_half;
 
 //i2c_send_one_byte
 reg start;
@@ -117,7 +116,6 @@ i2c_send_one_byte u_i2c_send_one_byte(
     .sys_rst_n(sys_rst_n),
 
     .i2c_clk(i2c_clk),
-    .i2c_clk_half(i2c_clk_half),
     .data(data),
     .start(start),
     .sub_scl(sub_scl),
@@ -131,8 +129,7 @@ i2c_clock u_i2c_clock(
     .sys_clk(sys_clk),
     .sys_rst_n(sys_rst_n),
 
-    .i2c_clk(i2c_clk),
-    .i2c_clk_half(i2c_clk_half)
+    .i2c_clk(i2c_clk)
 );
 
 endmodule

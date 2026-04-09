@@ -1,0 +1,20 @@
+[
+ {
+  "InstFile" : "C:/Project/gowin_fpga/github_project/test/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Project/gowin_fpga/github_project/test/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Project/gowin_fpga/github_project/test/src/top.v",
+    "InstLine" : 24,
+    "InstName" : "u_i2c_clock",
+    "ModuleFile" : "C:/Project/gowin_fpga/github_project/test/src/i2c_clock.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "i2c_clock"
+   }
+  ]
+ }
+]
