@@ -8,5 +8,7 @@
         <File path="src/i2c_clock.v" type="file.verilog" enable="1"/>
         <File path="src/i2c_send_one_byte.v" type="file.verilog" enable="1"/>
         <File path="src/i2c_send_single_command.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_write_test_1.cst" type="file.cst" enable="1"/>
+        <File path="src/i2c_write_test_1.rao" type="file.gao" enable="1"/>
     </FileList>
 </Project>

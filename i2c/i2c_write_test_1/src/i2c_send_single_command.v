@@ -48,7 +48,6 @@ wire i2c_clk;
 
 //i2c_send_one_byte
 reg start;
-wire done;
 wire need_release;
 
 //
@@ -119,10 +118,11 @@ i2c_send_one_byte u_i2c_send_one_byte(
     .data(data),
     .start(start),
     .sub_scl(sub_scl),
-    .sda(sub_sda),
+    .sda_out(sub_sda),
+    .sda_in(sda_in),
     .out_done(done),
     .need_release(need_release)
-)
+);
 
 
 i2c_clock u_i2c_clock(
