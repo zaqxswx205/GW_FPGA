@@ -56,7 +56,7 @@ reg [7:0] data;
 //scl
 reg scl_buf;
 wire sub_scl;
-assign scl = (start) ? scl_buf : 1'b1;
+assign scl = (start) ? sub_scl: 1'b1;
 
 //sda三态设置，sda输出还是输入是由need_release决定的，
 //sda输出控制有两个来源，一个是顶层，一个是i2c_send_one_byte模块的输出
@@ -100,6 +100,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 start <= 1'b1;
             end
             STOP:begin
+                sda_buf <= 1'b1;
                 start <= 1'b0;
             end
             default:begin
@@ -121,6 +122,7 @@ i2c_send_one_byte u_i2c_send_one_byte(
     .sda_out(sub_sda),
     .sda_in(sda_in),
     .out_done(done),
+    .out_busy(busy),
     .need_release(need_release)
 );
 

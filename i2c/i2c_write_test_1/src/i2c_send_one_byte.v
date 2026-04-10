@@ -6,6 +6,7 @@ module i2c_send_one_byte(
     input i2c_clk_half,
     input [7:0] data,
     input start,
+    output out_busy,
 
     output reg sub_scl,
     output reg sda_out,
@@ -45,6 +46,24 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
 end
 assign out_done = done_sync2 & ~done_sync2_d;
 
+reg busy;
+reg busy_sync1;
+reg busy_sync2;
+reg busy_sync2_d;
+always @(posedge sys_clk or negedge sys_rst_n) begin
+    if (!sys_rst_n) begin
+        busy_sync1 <= 1'b0;
+        busy_sync2 <= 1'b0;
+        busy_sync2_d <= 1'b0;
+    end
+    else begin
+        busy_sync1 <= busy;
+        busy_sync2 <= busy_sync1;
+        busy_sync2_d <= busy_sync2;
+    end
+end
+assign out_busy = busy_sync2 & ~busy_sync2_d;
+
 reg [10:0] cur_state;
 reg [10:0] next_state;
 reg pulse_cnt;
@@ -60,7 +79,7 @@ end
 
 always @(*) begin
     case (cur_state)
-        IDLE: next_state = (start) ? BIT_7 : IDLE;
+        IDLE: next_state = (!sub_scl) ? BIT_7 : IDLE;
         BIT_7: next_state = (pulse_cnt) ? BIT_6 : BIT_7;
         BIT_6: next_state = (pulse_cnt) ? BIT_5 : BIT_6;
         BIT_5: next_state = (pulse_cnt) ? BIT_4 : BIT_5;
@@ -81,7 +100,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
     end
     else begin
         case (cur_state)
-            IDLE: sub_scl <= (start) ? 1'b0 : 1'b1;
+            IDLE: sub_scl <= 1'b0;
             BIT_7: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
             BIT_6: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
             BIT_5: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
@@ -91,8 +110,8 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
             BIT_1: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
             BIT_0: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
             BIT_ACK: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
-            STOP: sub_scl <= 1'b1;
-            default: sub_scl <= 1'b1;
+            STOP: sub_scl <=  1'b0;
+            default: sub_scl <= 1'b0;
         endcase
     end
 end
@@ -102,6 +121,8 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
         need_release <= 1'b0;
         done <= 1'b0;
         pulse_cnt <= 1'b0;
+        sda_out <= 1'b1;
+        busy <= 1'b0;
     end
     else begin
         case (cur_state)
@@ -109,11 +130,13 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
                 need_release <= 1'b0;
                 done <= 1'b0;
                 pulse_cnt <= 1'b0;
+                busy <= 1'b0;
             end
             BIT_7:begin
                 need_release <= 1'b0;
                 sda_out <= data[7];
                 pulse_cnt <= pulse_cnt + 1'b1;
+                busy <= 1'b1;
             end
             BIT_6:begin
                 need_release <= 1'b0;
@@ -158,7 +181,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
             STOP:begin
                 need_release <= 1'b0;
                 done <= 1'b1;
-                pulse_cnt <= pulse_cnt + 1'b1;
+                busy <= 1'b0;
             end
             default:begin
                 need_release <= 1'b0;

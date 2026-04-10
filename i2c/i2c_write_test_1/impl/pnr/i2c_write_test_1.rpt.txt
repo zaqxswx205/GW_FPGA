@@ -12,27 +12,27 @@
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Thu Apr  9 12:55:25 2026
+  <Created Time>:Fri Apr 10 15:30:19 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.083s, Elapsed time = 0h 0m 0.083s
-    Placement Phase 1: CPU time = 0h 0m 0.066s, Elapsed time = 0h 0m 0.066s
-    Placement Phase 2: CPU time = 0h 0m 0.071s, Elapsed time = 0h 0m 0.072s
-    Placement Phase 3: CPU time = 0h 0m 0.519s, Elapsed time = 0h 0m 0.52s
-    Total Placement: CPU time = 0h 0m 0.739s, Elapsed time = 0h 0m 0.741s
+    Placement Phase 0: CPU time = 0h 0m 0.082s, Elapsed time = 0h 0m 0.082s
+    Placement Phase 1: CPU time = 0h 0m 0.065s, Elapsed time = 0h 0m 0.065s
+    Placement Phase 2: CPU time = 0h 0m 0.078s, Elapsed time = 0h 0m 0.078s
+    Placement Phase 3: CPU time = 0h 0m 0.511s, Elapsed time = 0h 0m 0.511s
+    Total Placement: CPU time = 0h 0m 0.736s, Elapsed time = 0h 0m 0.736s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
-    Routing Phase 1: CPU time = 0h 0m 0.123s, Elapsed time = 0h 0m 0.124s
-    Routing Phase 2: CPU time = 0h 0m 0.316s, Elapsed time = 0h 0m 0.316s
+    Routing Phase 1: CPU time = 0h 0m 0.119s, Elapsed time = 0h 0m 0.12s
+    Routing Phase 2: CPU time = 0h 0m 0.311s, Elapsed time = 0h 0m 0.31s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 0.44s, Elapsed time = 0h 0m 0.44s
+    Total Routing: CPU time = 0h 0m 0.431s, Elapsed time = 0h 0m 0.43s
  Generate output files:
     CPU time = 0h 0m 0.853s, Elapsed time = 0h 0m 0.853s
 
- Total Time and Memory Usage: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 426MB
+ Total Time and Memory Usage: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 377MB
 
 
 3. Resource Usage Summary
@@ -40,8 +40,8 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 665/8640                            |  8%
-    --LUT,ALU,ROM16           | 665(645 LUT, 20 ALU, 0 ROM16)       | -
+  Logic                       | 671/8640                            |  8%
+    --LUT,ALU,ROM16           | 671(651 LUT, 20 ALU, 0 ROM16)       | -
     --SSRAM(RAM16)            | 0                                   | -
   Register                    | 523/6693                            |  8%
     --Logic Register as Latch | 0/6480                              |  0%
@@ -88,7 +88,7 @@
   Signal         | Global Clock   | Location
   -------------------------------------------
   sys_clk_d      | PRIMARY        |  TR TL BR BL
-  i2c_clk_Z      | PRIMARY        |  BL
+  i2c_clk_Z      | PRIMARY        |  BR
   gw_gao_inst_0/control0[0]| PRIMARY        |  TR TL BR BL
   gw_gao_inst_0/gao_jtag_reset| LW             |  -
   gw_gao_inst_0/u_la0_top/rst_ao| LW             |  -
