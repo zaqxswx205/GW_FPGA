@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="i2c_send_single_command" Register="14" Lut="28" T_Register="535(14)" T_Alu="16(0)" T_Lut="659(28)" T_Bsram="23(0)">
+ <SubModule name="gw_gao_inst_0" Register="494" Alu="16" Lut="573" Bsram="23" T_Register="494(494)" T_Alu="16(16)" T_Lut="573(573)" T_Bsram="23(23)"/>
+ <SubModule name="u_i2c_send_one_byte" Register="20" Lut="48" T_Register="20(20)" T_Lut="48(48)"/>
+ <SubModule name="u_i2c_clock" Register="7" Lut="10" T_Register="7(7)" T_Lut="10(10)"/>
+</Module>
