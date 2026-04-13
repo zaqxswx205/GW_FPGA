@@ -12,6 +12,7 @@ module i2c_send_one_byte(
     output reg sda_out,
     input sda_in,
     output  out_done,
+    output reg error,
     output reg need_release
 );
 
@@ -123,6 +124,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
         pulse_cnt <= 1'b0;
         sda_out <= 1'b1;
         busy <= 1'b0;
+        error <= 1'b0;
     end
     else begin
         case (cur_state)
@@ -131,6 +133,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
                 done <= 1'b0;
                 pulse_cnt <= 1'b0;
                 busy <= 1'b0;
+                error <= 1'b0;
             end
             BIT_7:begin
                 need_release <= 1'b0;
@@ -175,7 +178,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
             end
             BIT_ACK:begin
                 need_release <= 1'b1;
-                sda_out <= 1'b1;
+                error <= sda_in;
                 pulse_cnt <= pulse_cnt + 1'b1;
             end
             STOP:begin

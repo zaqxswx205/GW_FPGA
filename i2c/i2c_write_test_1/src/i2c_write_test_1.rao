@@ -46,7 +46,11 @@
             <Signal capture_enable="true">sda_out</Signal>
             <Signal capture_enable="true">sda_in</Signal>
             <Signal capture_enable="true">sda_buf</Signal>
-            <Signal capture_enable="true">u_i2c_send_one_byte/pulse_cnt</Signal>
+            <Bus capture_enable="true" name="error_cnt[2:0]">
+                <Signal>error_cnt[2]</Signal>
+                <Signal>error_cnt[1]</Signal>
+                <Signal>error_cnt[0]</Signal>
+            </Bus>
         </SignalList>
         <Triggers>
             <Trigger index="0">
@@ -121,5 +125,5 @@
             <Expression>M2</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>0001011010111100</GAO_ID>
+    <GAO_ID>0111000001011000</GAO_ID>
 </GAO_CONFIG>

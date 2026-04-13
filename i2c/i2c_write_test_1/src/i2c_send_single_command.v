@@ -49,6 +49,7 @@ wire i2c_clk;
 //i2c_send_one_byte
 reg start;
 wire need_release;
+wire error;
 
 //
 reg [7:0] data;
@@ -68,6 +69,7 @@ wire sda_out;
 wire sda_in;
 reg sda_buf;
 wire i2c_send_one_byte_sda;
+reg [2:0] error_cnt;
 
 assign sda = (need_release) ? 1'bz : sda_out;
 assign sda_in = sda;
@@ -77,12 +79,14 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         start <= 1'b0;
         sda_buf <= 1'b1;
+        error_cnt <= 3'd0;
     end
     else begin
         case (cur_state)
             IDLE:begin
                 sda_buf <= 1'b1;
                 start <= 1'b0;
+                error_cnt <= 3'd0;
             end
             START:begin
                 sda_buf <= 1'b0;
@@ -90,14 +94,17 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
             ADDR:begin
                 data <= I2C_ADDR;
                 start <= 1'b1;
+                error_cnt[0] <= error;
             end
             CONTROL_BYTE:begin
                 data <= CONTROL;
                 start <= 1'b1;
+                error_cnt[1] <= error;
             end
             COMMAND_BYTE:begin
                 data <= COMMAND;
                 start <= 1'b1;
+                error_cnt[2] <= error;
             end
             STOP:begin
                 sda_buf <= 1'b1;
@@ -123,6 +130,7 @@ i2c_send_one_byte u_i2c_send_one_byte(
     .sda_in(sda_in),
     .out_done(done),
     .out_busy(busy),
+    .error(error),
     .need_release(need_release)
 );
 

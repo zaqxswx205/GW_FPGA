@@ -3,7 +3,7 @@ Running parser ...
 Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_clock.v'
 Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_one_byte.v'
 Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v'
-Undeclared symbol 'busy', assumed default net type 'wire'("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v":125)
+Undeclared symbol 'busy', assumed default net type 'wire'("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v":132)
 Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v'
 Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'
 Analyzing included file 'C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
@@ -36,7 +36,7 @@ Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_
 Compiling module 'i2c_clock'("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_clock.v":1)
 Compiling module 'i2c_send_one_byte'("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_one_byte.v":1)
 Compiling module 'i2c_send_single_command'("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v":1)
-WARN  (EX2565) : Input 'i2c_clk_half' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v":127)
+WARN  (EX2565) : Input 'i2c_clk_half' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Project\gowin_fpga\github_project\i2c\i2c_write_test_1\src\i2c_send_single_command.v":135)
 Compiling module '**'("C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v":74)
 Compiling module '**'("C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
 Compiling module '**'("C:\Gowin\Gowin_V1.9.11.03_Education_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
