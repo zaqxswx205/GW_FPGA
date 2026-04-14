@@ -3,7 +3,6 @@ module i2c_send_one_byte(
     input sys_rst_n,
 
     input i2c_clk,
-    input i2c_clk_half,
     input [7:0] data,
     input start,
     output out_busy,

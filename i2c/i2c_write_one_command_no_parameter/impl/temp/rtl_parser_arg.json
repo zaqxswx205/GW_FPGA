@@ -12,6 +12,10 @@
   {
    "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_one_command_no_parameter/src/i2c_send_single_command.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_one_command_no_parameter/src/top.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

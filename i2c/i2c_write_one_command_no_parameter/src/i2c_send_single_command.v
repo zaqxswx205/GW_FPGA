@@ -2,13 +2,16 @@ module i2c_send_single_command(
     input sys_clk,
     input sys_rst_n,
     
+    input start,
+    input [7:0] command,
+    output reg done,
+    output reg busy,
     output scl,
     inout sda
 );
 
 parameter I2C_ADDR = 8'h78;
 parameter CONTROL  = 8'h00;
-parameter COMMAND  = 8'hae;
 
 parameter IDLE         = 6'b00_0001;
 parameter START        = 6'b00_0010;
@@ -29,16 +32,16 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     end
 end
 
-wire done;
+wire send_done;
 
 always @(*) begin
     case (cur_state)
-        IDLE:next_state = START;
+        IDLE:next_state = (start) ? START : IDLE;
         START:next_state = (!sda) ? ADDR : START;
-        ADDR:next_state = (done) ? CONTROL_BYTE : ADDR;
-        CONTROL_BYTE:next_state = (done) ? COMMAND_BYTE : CONTROL_BYTE;
-        COMMAND_BYTE:next_state = (done) ? STOP : COMMAND_BYTE;
-        STOP:next_state = IDLE;
+        ADDR:next_state = (send_done) ? CONTROL_BYTE : ADDR;
+        CONTROL_BYTE:next_state = (send_done) ? COMMAND_BYTE : CONTROL_BYTE;
+        COMMAND_BYTE:next_state = (send_done) ? STOP : COMMAND_BYTE;
+        STOP:next_state = (done) ? IDLE : STOP;
         default:next_state = IDLE;
     endcase
 end
@@ -47,9 +50,10 @@ end
 wire i2c_clk;
 
 //i2c_send_one_byte
-reg start;
+reg send_start;
 wire need_release;
 wire error;
+wire send_busy;
 
 //
 reg [7:0] data;
@@ -57,7 +61,7 @@ reg [7:0] data;
 //scl
 reg scl_buf;
 wire sub_scl;
-assign scl = (start) ? sub_scl: 1'b1;
+assign scl = (send_start) ? sub_scl: 1'b1;
 
 //sda三态设置，sda输出还是输入是由need_release决定的，
 //sda输出控制有两个来源，一个是顶层，一个是i2c_send_one_byte模块的输出
@@ -73,46 +77,53 @@ reg [2:0] error_cnt;
 
 assign sda = (need_release) ? 1'bz : sda_out;
 assign sda_in = sda;
-assign sda_out = (start) ? sub_sda : sda_buf;
+assign sda_out = (send_start) ? sub_sda : sda_buf;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
-        start <= 1'b0;
+        send_start <= 1'b0;
         sda_buf <= 1'b1;
         error_cnt <= 3'd0;
+        done <= 1'b0;
+        busy <= 1'b0;
     end
     else begin
         case (cur_state)
             IDLE:begin
                 sda_buf <= 1'b1;
-                start <= 1'b0;
+                send_start <= 1'b0;
                 error_cnt <= 3'd0;
+                done <= 1'b0;
+                busy <= 1'b0;
             end
             START:begin
                 sda_buf <= 1'b0;
+                busy <= 1'b1;
             end
             ADDR:begin
                 data <= I2C_ADDR;
-                start <= 1'b1;
+                send_start <= 1'b1;
                 error_cnt[0] <= error;
             end
             CONTROL_BYTE:begin
                 data <= CONTROL;
-                start <= 1'b1;
+                send_start <= 1'b1;
                 error_cnt[1] <= error;
             end
             COMMAND_BYTE:begin
-                data <= COMMAND;
-                start <= 1'b1;
+                data <= command;
+                send_start <= 1'b1;
                 error_cnt[2] <= error;
             end
             STOP:begin
+                busy <= 1'b0;
                 sda_buf <= 1'b1;
-                start <= 1'b0;
+                send_start <= 1'b0;
+                done <= 1'b1;
             end
             default:begin
                 sda_buf <= 1'b1;
-                start <= 1'b0;
+                send_start <= 1'b0;
             end
         endcase
     end
@@ -124,12 +135,12 @@ i2c_send_one_byte u_i2c_send_one_byte(
 
     .i2c_clk(i2c_clk),
     .data(data),
-    .start(start),
+    .start(send_start),
     .sub_scl(sub_scl),
     .sda_out(sub_sda),
     .sda_in(sda_in),
-    .out_done(done),
-    .out_busy(busy),
+    .out_done(send_done),
+    .out_busy(send_busy),
     .error(error),
     .need_release(need_release)
 );
