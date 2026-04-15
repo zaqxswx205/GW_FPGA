@@ -42,7 +42,6 @@
             <Signal capture_enable="true">done</Signal>
             <Signal capture_enable="true">busy</Signal>
             <Signal capture_enable="true">u_i2c_send_single_command/send_done</Signal>
-            <Signal capture_enable="true">u_i2c_send_single_command/u_i2c_send_one_byte/out_done</Signal>
             <Bus capture_enable="true" name="u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10:0]">
                 <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10]</Signal>
                 <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9]</Signal>
@@ -128,5 +127,5 @@
             <Expression>M4</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1100001111100000</GAO_ID>
+    <GAO_ID>1001000110011111</GAO_ID>
 </GAO_CONFIG>

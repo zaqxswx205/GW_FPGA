@@ -139,8 +139,8 @@ i2c_send_one_byte u_i2c_send_one_byte(
     .sub_scl(sub_scl),
     .sda_out(sub_sda),
     .sda_in(sda_in),
-    .out_done(send_done),
-    .out_busy(send_busy),
+    .done(send_done),
+    .busy(send_busy),
     .error(error),
     .need_release(need_release)
 );

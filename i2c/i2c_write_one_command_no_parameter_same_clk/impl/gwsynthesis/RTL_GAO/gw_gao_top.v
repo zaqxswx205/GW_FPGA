@@ -31,7 +31,6 @@ module gw_gao(
     done,
     busy,
     \u_i2c_send_single_command/send_done ,
-    \u_i2c_send_single_command/u_i2c_send_one_byte/out_done ,
     \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10] ,
     \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9] ,
     \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8] ,
@@ -82,7 +81,6 @@ input start;
 input done;
 input busy;
 input \u_i2c_send_single_command/send_done ;
-input \u_i2c_send_single_command/u_i2c_send_one_byte/out_done ;
 input \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10] ;
 input \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9] ;
 input \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8] ;
@@ -132,7 +130,6 @@ wire start;
 wire done;
 wire busy;
 wire \u_i2c_send_single_command/send_done ;
-wire \u_i2c_send_single_command/u_i2c_send_one_byte/out_done ;
 wire \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10] ;
 wire \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9] ;
 wire \u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8] ;
@@ -223,7 +220,7 @@ ao_top_0  u_la0_top(
     .trig2_i(busy),
     .trig3_i({\u_i2c_send_single_command/cur_state[5] ,\u_i2c_send_single_command/cur_state[4] ,\u_i2c_send_single_command/cur_state[3] ,\u_i2c_send_single_command/cur_state[2] ,\u_i2c_send_single_command/cur_state[1] ,\u_i2c_send_single_command/cur_state[0] }),
     .trig4_i(\u_i2c_send_single_command/send_done ),
-    .data_i({\u_i2c_send_single_command/cur_state[5] ,\u_i2c_send_single_command/cur_state[4] ,\u_i2c_send_single_command/cur_state[3] ,\u_i2c_send_single_command/cur_state[2] ,\u_i2c_send_single_command/cur_state[1] ,\u_i2c_send_single_command/cur_state[0] ,\u_i2c_send_single_command/data[7] ,\u_i2c_send_single_command/data[6] ,\u_i2c_send_single_command/data[5] ,\u_i2c_send_single_command/data[4] ,\u_i2c_send_single_command/data[3] ,\u_i2c_send_single_command/data[2] ,\u_i2c_send_single_command/data[1] ,\u_i2c_send_single_command/data[0] ,scl,sda,\cnt[11] ,\cnt[10] ,\cnt[9] ,\cnt[8] ,\cnt[7] ,\cnt[6] ,\cnt[5] ,\cnt[4] ,\cnt[3] ,\cnt[2] ,\cnt[1] ,\cnt[0] ,start,done,busy,\u_i2c_send_single_command/send_done ,\u_i2c_send_single_command/u_i2c_send_one_byte/out_done ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[7] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[6] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[5] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[4] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[3] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[2] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[1] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[0] }),
+    .data_i({\u_i2c_send_single_command/cur_state[5] ,\u_i2c_send_single_command/cur_state[4] ,\u_i2c_send_single_command/cur_state[3] ,\u_i2c_send_single_command/cur_state[2] ,\u_i2c_send_single_command/cur_state[1] ,\u_i2c_send_single_command/cur_state[0] ,\u_i2c_send_single_command/data[7] ,\u_i2c_send_single_command/data[6] ,\u_i2c_send_single_command/data[5] ,\u_i2c_send_single_command/data[4] ,\u_i2c_send_single_command/data[3] ,\u_i2c_send_single_command/data[2] ,\u_i2c_send_single_command/data[1] ,\u_i2c_send_single_command/data[0] ,scl,sda,\cnt[11] ,\cnt[10] ,\cnt[9] ,\cnt[8] ,\cnt[7] ,\cnt[6] ,\cnt[5] ,\cnt[4] ,\cnt[3] ,\cnt[2] ,\cnt[1] ,\cnt[0] ,start,done,busy,\u_i2c_send_single_command/send_done ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[7] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[6] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[5] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[4] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[3] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[2] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[1] ,\u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[0] }),
     .clk_i(sys_clk)
 );
 

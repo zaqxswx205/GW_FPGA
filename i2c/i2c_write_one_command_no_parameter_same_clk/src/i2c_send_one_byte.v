@@ -5,12 +5,12 @@ module i2c_send_one_byte(
     input i2c_clk,
     input [7:0] data,
     input start,
-    output out_busy,
+    output reg busy,
 
     output reg sub_scl,
     output reg sda_out,
     input sda_in,
-    output  out_done,
+    output  reg done,
     output reg error,
     output reg need_release
 );
@@ -27,52 +27,15 @@ parameter BIT_0   = 11'b001_0000_0000;
 parameter BIT_ACK = 11'b010_0000_0000;
 parameter STOP    = 11'b100_0000_0000;
 
-
-reg done;
-reg done_sync1;
-reg done_sync2;
-reg done_sync2_d;
-always @(posedge sys_clk or negedge sys_rst_n) begin
-    if (!sys_rst_n) begin
-        done_sync1   <= 1'b0;
-        done_sync2   <= 1'b0;
-        done_sync2_d <= 1'b0;
-    end
-    else begin
-        done_sync1   <= done;        // async source sampled
-        done_sync2   <= done_sync1;  // metastability filter
-        done_sync2_d <= done_sync2;  // one-cycle delayed
-    end
-end
-assign out_done = done_sync2 & ~done_sync2_d;
-
-reg busy;
-reg busy_sync1;
-reg busy_sync2;
-reg busy_sync2_d;
-always @(posedge sys_clk or negedge sys_rst_n) begin
-    if (!sys_rst_n) begin
-        busy_sync1 <= 1'b0;
-        busy_sync2 <= 1'b0;
-        busy_sync2_d <= 1'b0;
-    end
-    else begin
-        busy_sync1 <= busy;
-        busy_sync2 <= busy_sync1;
-        busy_sync2_d <= busy_sync2;
-    end
-end
-assign out_busy = busy_sync2 & ~busy_sync2_d;
-
 reg [10:0] cur_state;
 reg [10:0] next_state;
 reg pulse_cnt;
 
-always @(posedge i2c_clk or negedge sys_rst_n) begin
+always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         cur_state <= IDLE;
     end
-    else begin
+    else if (i2c_clk) begin
         cur_state <= next_state;
     end
 end
@@ -94,11 +57,11 @@ always @(*) begin
     endcase
 end
 
-always @(posedge i2c_clk or negedge sys_rst_n) begin
+always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         sub_scl <= 1'b1;
     end
-    else begin
+    else if (i2c_clk) begin
         case (cur_state)
             IDLE: sub_scl <= 1'b0;
             BIT_7: sub_scl <= (pulse_cnt) ? 1'b1 : 1'b0;
@@ -116,7 +79,7 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
     end
 end
 
-always @(posedge i2c_clk or negedge sys_rst_n) begin
+always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         need_release <= 1'b0;
         done <= 1'b0;
@@ -126,70 +89,72 @@ always @(posedge i2c_clk or negedge sys_rst_n) begin
         error <= 1'b0;
     end
     else begin
-        case (cur_state)
-            IDLE:begin
-                need_release <= 1'b0;
-                done <= 1'b0;
-                pulse_cnt <= 1'b0;
-                busy <= 1'b0;
-                error <= 1'b0;
-            end
-            BIT_7:begin
-                need_release <= 1'b0;
-                sda_out <= data[7];
-                pulse_cnt <= pulse_cnt + 1'b1;
-                busy <= 1'b1;
-            end
-            BIT_6:begin
-                need_release <= 1'b0;
-                sda_out <= data[6];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_5:begin
-                need_release <= 1'b0;
-                sda_out <= data[5];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_4:begin
-                need_release <= 1'b0;
-                sda_out <= data[4];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_3:begin
-                need_release <= 1'b0;
-                sda_out <= data[3];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_2:begin
-                need_release <= 1'b0;
-                sda_out <= data[2];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_1:begin
-                need_release <= 1'b0;
-                sda_out <= data[1];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_0:begin
-                need_release <= 1'b0;
-                sda_out <= data[0];
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            BIT_ACK:begin
-                need_release <= 1'b1;
-                error <= sda_in;
-                pulse_cnt <= pulse_cnt + 1'b1;
-            end
-            STOP:begin
-                need_release <= 1'b0;
-                done <= 1'b1;
-                busy <= 1'b0;
-            end
-            default:begin
-                need_release <= 1'b0;
-                done <= 1'b0;
-            end
-        endcase
+        done <= 1'b0;
+        if (i2c_clk) begin
+            case (cur_state)
+                IDLE:begin
+                    need_release <= 1'b0;
+                    pulse_cnt <= 1'b0;
+                    busy <= 1'b0;
+                    error <= 1'b0;
+                end
+                BIT_7:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[7];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                    busy <= 1'b1;
+                end
+                BIT_6:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[6];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_5:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[5];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_4:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[4];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_3:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[3];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_2:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[2];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_1:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[1];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_0:begin
+                    need_release <= 1'b0;
+                    sda_out <= data[0];
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                BIT_ACK:begin
+                    need_release <= 1'b1;
+                    error <= sda_in;
+                    pulse_cnt <= pulse_cnt + 1'b1;
+                end
+                STOP:begin
+                    need_release <= 1'b0;
+                    done <= 1'b1;
+                    busy <= 1'b0;
+                end
+                default:begin
+                    need_release <= 1'b0;
+                    done <= 1'b0;
+                end
+            endcase
+        end
     end
 end
 

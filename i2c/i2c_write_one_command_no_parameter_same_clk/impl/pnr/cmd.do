@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\Project\gowin_fpga\github_project\i2c\i2c_write_one_command_no_parameter_same_clk\src\i2c_write_test_1.cst
 -cfg C:\Project\gowin_fpga\github_project\i2c\i2c_write_one_command_no_parameter_same_clk\impl\pnr\device.cfg
--gao_crc 1100001111100000
+-gao_crc 1001000110011111
 -bit
 -tr
 -ph
