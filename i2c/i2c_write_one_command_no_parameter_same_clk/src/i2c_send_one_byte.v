@@ -79,6 +79,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     end
 end
 
+
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
         need_release <= 1'b0;
