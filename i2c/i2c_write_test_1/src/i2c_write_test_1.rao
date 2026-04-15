@@ -51,6 +51,7 @@
                 <Signal>error_cnt[1]</Signal>
                 <Signal>error_cnt[0]</Signal>
             </Bus>
+            <Signal capture_enable="true">u_i2c_send_one_byte/out_done</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
@@ -125,5 +126,5 @@
             <Expression>M2</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>0111000001011000</GAO_ID>
+    <GAO_ID>0110000100000010</GAO_ID>
 </GAO_CONFIG>

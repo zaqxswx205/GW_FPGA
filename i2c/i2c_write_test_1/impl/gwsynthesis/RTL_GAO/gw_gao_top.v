@@ -38,6 +38,7 @@ module gw_gao(
     \error_cnt[2] ,
     \error_cnt[1] ,
     \error_cnt[0] ,
+    \u_i2c_send_one_byte/out_done ,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -84,6 +85,7 @@ input sda_buf;
 input \error_cnt[2] ;
 input \error_cnt[1] ;
 input \error_cnt[0] ;
+input \u_i2c_send_one_byte/out_done ;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
@@ -129,6 +131,7 @@ wire sda_buf;
 wire \error_cnt[2] ;
 wire \error_cnt[1] ;
 wire \error_cnt[0] ;
+wire \u_i2c_send_one_byte/out_done ;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -206,7 +209,7 @@ ao_top_0  u_la0_top(
     .trig0_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] }),
     .trig1_i(done),
     .trig2_i({\u_i2c_send_one_byte/cur_state[10] ,\u_i2c_send_one_byte/cur_state[9] ,\u_i2c_send_one_byte/cur_state[8] ,\u_i2c_send_one_byte/cur_state[7] ,\u_i2c_send_one_byte/cur_state[6] ,\u_i2c_send_one_byte/cur_state[5] ,\u_i2c_send_one_byte/cur_state[4] ,\u_i2c_send_one_byte/cur_state[3] ,\u_i2c_send_one_byte/cur_state[2] ,\u_i2c_send_one_byte/cur_state[1] ,\u_i2c_send_one_byte/cur_state[0] }),
-    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\u_i2c_send_one_byte/cur_state[10] ,\u_i2c_send_one_byte/cur_state[9] ,\u_i2c_send_one_byte/cur_state[8] ,\u_i2c_send_one_byte/cur_state[7] ,\u_i2c_send_one_byte/cur_state[6] ,\u_i2c_send_one_byte/cur_state[5] ,\u_i2c_send_one_byte/cur_state[4] ,\u_i2c_send_one_byte/cur_state[3] ,\u_i2c_send_one_byte/cur_state[2] ,\u_i2c_send_one_byte/cur_state[1] ,\u_i2c_send_one_byte/cur_state[0] ,scl,sda,done,i2c_clk,start,need_release,sub_scl,sub_sda,sda_out,sda_in,sda_buf,\error_cnt[2] ,\error_cnt[1] ,\error_cnt[0] }),
+    .data_i({\cur_state[5] ,\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\data[7] ,\data[6] ,\data[5] ,\data[4] ,\data[3] ,\data[2] ,\data[1] ,\data[0] ,\u_i2c_send_one_byte/cur_state[10] ,\u_i2c_send_one_byte/cur_state[9] ,\u_i2c_send_one_byte/cur_state[8] ,\u_i2c_send_one_byte/cur_state[7] ,\u_i2c_send_one_byte/cur_state[6] ,\u_i2c_send_one_byte/cur_state[5] ,\u_i2c_send_one_byte/cur_state[4] ,\u_i2c_send_one_byte/cur_state[3] ,\u_i2c_send_one_byte/cur_state[2] ,\u_i2c_send_one_byte/cur_state[1] ,\u_i2c_send_one_byte/cur_state[0] ,scl,sda,done,i2c_clk,start,need_release,sub_scl,sub_sda,sda_out,sda_in,sda_buf,\error_cnt[2] ,\error_cnt[1] ,\error_cnt[0] ,\u_i2c_send_one_byte/out_done }),
     .clk_i(sys_clk)
 );
 

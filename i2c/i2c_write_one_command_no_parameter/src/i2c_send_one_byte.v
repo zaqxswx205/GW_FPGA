@@ -79,7 +79,7 @@ end
 
 always @(*) begin
     case (cur_state)
-        IDLE: next_state = (!sub_scl) ? BIT_7 : IDLE;
+        IDLE: next_state = (start) ? BIT_7 : IDLE;
         BIT_7: next_state = (pulse_cnt) ? BIT_6 : BIT_7;
         BIT_6: next_state = (pulse_cnt) ? BIT_5 : BIT_6;
         BIT_5: next_state = (pulse_cnt) ? BIT_4 : BIT_5;
