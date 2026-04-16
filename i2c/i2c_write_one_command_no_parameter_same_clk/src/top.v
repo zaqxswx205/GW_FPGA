@@ -7,7 +7,7 @@ module top(
 
 );
 
-parameter CNT_MAX = 27_00 - 1;
+parameter CNT_MAX = 27_000 - 1;
 
 reg start;
 wire done;

@@ -41,20 +41,14 @@
             <Signal capture_enable="true">start</Signal>
             <Signal capture_enable="true">done</Signal>
             <Signal capture_enable="true">busy</Signal>
-            <Signal capture_enable="true">u_i2c_send_single_command/send_done</Signal>
-            <Bus capture_enable="true" name="u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10:0]">
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[10]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[9]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[8]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[7]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[6]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[5]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[4]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[3]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[2]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[1]</Signal>
-                <Signal>u_i2c_send_single_command/u_i2c_send_one_byte/cur_state[0]</Signal>
+            <Bus capture_enable="true" name="u_i2c_send_single_command/pulse_cnt[3:0]">
+                <Signal>u_i2c_send_single_command/pulse_cnt[3]</Signal>
+                <Signal>u_i2c_send_single_command/pulse_cnt[2]</Signal>
+                <Signal>u_i2c_send_single_command/pulse_cnt[1]</Signal>
+                <Signal>u_i2c_send_single_command/pulse_cnt[0]</Signal>
             </Bus>
+            <Signal capture_enable="true">u_i2c_send_single_command/scl_buf</Signal>
+            <Signal capture_enable="true">u_i2c_send_single_command/sda_buf</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
@@ -63,16 +57,6 @@
                 </SignalList>
             </Trigger>
             <Trigger index="1">
-                <SignalList>
-                    <Signal>start</Signal>
-                </SignalList>
-            </Trigger>
-            <Trigger index="2">
-                <SignalList>
-                    <Signal>busy</Signal>
-                </SignalList>
-            </Trigger>
-            <Trigger index="3">
                 <SignalList>
                     <Bus restorename="u_i2c_send_single_command/cur_state[5:0]">
                         <Signal>u_i2c_send_single_command/cur_state[5]</Signal>
@@ -84,11 +68,18 @@
                     </Bus>
                 </SignalList>
             </Trigger>
-            <Trigger index="4">
+            <Trigger index="2">
                 <SignalList>
-                    <Signal>u_i2c_send_single_command/send_done</Signal>
+                    <Bus restorename="u_i2c_send_single_command/pulse_cnt[3:0]">
+                        <Signal>u_i2c_send_single_command/pulse_cnt[3]</Signal>
+                        <Signal>u_i2c_send_single_command/pulse_cnt[2]</Signal>
+                        <Signal>u_i2c_send_single_command/pulse_cnt[1]</Signal>
+                        <Signal>u_i2c_send_single_command/pulse_cnt[0]</Signal>
+                    </Bus>
                 </SignalList>
             </Trigger>
+            <Trigger index="3"/>
+            <Trigger index="4"/>
             <Trigger index="5"/>
             <Trigger index="6"/>
             <Trigger index="7"/>
@@ -103,10 +94,10 @@
         </Triggers>
         <MatchUnits>
             <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="0"/>
-            <MatchUnit index="1" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="1"/>
-            <MatchUnit index="2" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="2"/>
-            <MatchUnit index="3" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="000100" value1="000000" trigger="3"/>
-            <MatchUnit index="4" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="4"/>
+            <MatchUnit index="1" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="000010" value1="000000" trigger="1"/>
+            <MatchUnit index="2" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="0010" value1="0000" trigger="2"/>
+            <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="000100" value1="000000" trigger="3"/>
+            <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="4"/>
             <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
@@ -123,9 +114,7 @@
             <Expression>M0</Expression>
             <Expression>M1</Expression>
             <Expression>M2</Expression>
-            <Expression>M3</Expression>
-            <Expression>M4</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1001000110011111</GAO_ID>
+    <GAO_ID>1101010000011000</GAO_ID>
 </GAO_CONFIG>

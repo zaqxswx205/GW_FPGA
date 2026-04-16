@@ -20,8 +20,8 @@ parameter CONTROL_BYTE = 6'b00_1000;
 parameter COMMAND_BYTE = 6'b01_0000;
 parameter STOP         = 6'b10_0000;
 
-parameter START_HOLD_CNT = 2'd2;
-parameter STOP_HOLD_CNT  = 2'd2;
+parameter START_HOLD_CNT = 4'b0100;
+parameter STOP_HOLD_CNT  = 4'b1000;
 
 reg [5:0] cur_state;
 reg [5:0] next_state;
@@ -36,7 +36,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
 end
 
 wire send_done;
-reg [1:0] pulse_cnt;
+reg [3:0] pulse_cnt;
 
 always @(*) begin
     case (cur_state)
@@ -45,7 +45,7 @@ always @(*) begin
         ADDR:         next_state = (send_done) ? CONTROL_BYTE : ADDR;
         CONTROL_BYTE: next_state = (send_done) ? COMMAND_BYTE : CONTROL_BYTE;
         COMMAND_BYTE: next_state = (send_done) ? STOP : COMMAND_BYTE;
-        STOP:         next_state = (pulse_cnt == STOP_HOLD_CNT) ? IDLE : STOP;
+        STOP:         next_state = (done) ? IDLE : STOP;
         default:      next_state = IDLE;
     endcase
 end
@@ -61,7 +61,7 @@ reg [7:0] data;
 
 reg scl_buf;
 wire sub_scl;
-assign scl = (send_start) ? sub_scl : 1'b1;
+assign scl = (send_start) ? sub_scl : scl_buf;
 
 wire sub_sda;
 wire sda_out;
@@ -81,63 +81,67 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         error_cnt  <= 3'd0;
         done       <= 1'b0;
         busy       <= 1'b0;
-        pulse_cnt  <= 2'd0;
+        pulse_cnt  <= 4'b0001;
+        scl_buf    <= 1'b1;
     end
     else begin
-        done <= 1'b0;
         case (cur_state)
             IDLE: begin
                 sda_buf    <= 1'b1;
+                scl_buf    <= 1'b1;
                 send_start <= 1'b0;
                 error_cnt  <= 3'd0;
                 busy       <= 1'b0;
-                pulse_cnt  <= 2'd0;
+                pulse_cnt  <= 4'b0001;
+                done <= 1'b0;
             end
             START: begin
                 sda_buf <= 1'b0;
                 busy <= 1'b1;
                 send_start <= 1'b0;
                 if (i2c_clk) begin
-                    pulse_cnt <= (pulse_cnt == START_HOLD_CNT) ? 2'd0 : pulse_cnt + 1'b1;
+                    pulse_cnt <= pulse_cnt << 1'b1;
                 end
             end
             ADDR: begin
+                pulse_cnt <= 4'b0001;
                 data <= I2C_ADDR;
                 send_start <= 1'b1;
                 error_cnt[0] <= error;
-                pulse_cnt <= 2'd0;
             end
             CONTROL_BYTE: begin
                 data <= CONTROL;
                 send_start <= 1'b1;
                 error_cnt[1] <= error;
-                pulse_cnt <= 2'd0;
             end
             COMMAND_BYTE: begin
                 data <= command;
                 send_start <= 1'b1;
                 error_cnt[2] <= error;
-                pulse_cnt <= 2'd0;
+                scl_buf <= 1'b0;
             end
             STOP: begin
                 busy <= 1'b0;
                 send_start <= 1'b0;
-                sda_buf <= 1'b1;
                 if (i2c_clk) begin
-                    if (pulse_cnt < STOP_HOLD_CNT)
-                        pulse_cnt <= pulse_cnt + 1'b1;
-                    else
-                        done <= 1'b1;
+                    case (pulse_cnt)
+                        4'b0001:sda_buf <= 1'b0;
+                        4'b0010:scl_buf <= 1'b1;
+                        4'b0100:sda_buf <= 1'b1;
+                        4'b1000:done <= 1'b1;
+                    endcase
+                    pulse_cnt <= (pulse_cnt == STOP_HOLD_CNT) ? 4'b0001 : pulse_cnt << 1'b1;
                 end
             end
             default: begin
                 sda_buf <= 1'b1;
                 send_start <= 1'b0;
-                pulse_cnt <= 2'd0;
+                pulse_cnt  <= 4'b0001;
             end
         endcase
     end
 end
+
 
 i2c_send_one_byte u_i2c_send_one_byte(
     .sys_clk(sys_clk),
