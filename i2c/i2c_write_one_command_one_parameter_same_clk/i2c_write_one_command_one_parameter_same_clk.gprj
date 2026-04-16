@@ -1,0 +1,15 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW1NR-9C" pn="GW1NR-LV9QN88PC6/I5">gw1nr9c-004</Device>
+    <FileList>
+        <File path="src/i2c_clock.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_send_one_byte.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_send_single_command.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/i2c_write_test_1.cst" type="file.cst" enable="1"/>
+        <File path="src/i2c_write_one_command_no_parameter.rao" type="file.gao" enable="1"/>
+    </FileList>
+</Project>
