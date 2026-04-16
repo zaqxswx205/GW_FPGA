@@ -7,31 +7,32 @@ module top(
 
 );
 
-parameter CNT_MAX = 12'd999;
+parameter CNT_MAX = 27_00 - 1;
 
 reg start;
 wire done;
 wire busy;
-reg [11:0] cnt;
+reg [25:0] cnt;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
-        cnt <= 12'd0;
+        cnt <= 26'd0;
         start <= 1'b0;
     end
-    else if (cnt == CNT_MAX) begin
-        if (!busy && !done && !start) begin
-            start <= 1'b1;
-        end
-        else if (done) begin
-            cnt <= 12'd0;
+    else begin
+        start <= 1'b0;
+        if (done) begin
+            cnt <= 26'd0;
         end
         else if (busy) begin
-            start <= 1'b0;
+            cnt <= cnt;
         end
-    end
-    else begin
-        cnt <= cnt + 1'b1;
+        else if (cnt == CNT_MAX) begin
+            start <= 1'b1;
+        end
+        else begin
+            cnt <= cnt + 1'b1;
+        end
     end
 end
 
