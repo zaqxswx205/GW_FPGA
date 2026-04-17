@@ -1,0 +1,29 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_command_final_ver/src/i2c_clock.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_command_final_ver/src/i2c_send_one_byte.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_command_final_ver/src/i2c_send_single_command.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_command_final_ver/src/top.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Project/gowin_fpga/github_project/i2c/i2c_write_command_final_ver/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}
