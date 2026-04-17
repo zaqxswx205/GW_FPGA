@@ -8,8 +8,9 @@ module top(
 );
 
 parameter CNT_MAX = 27_000 - 1;
-parameter COMMAND = 8'hD5;
-parameter PARAM = 8'h80;
+parameter COMMAND = 8'h21;
+parameter PARAM_1 = 8'h00;
+parameter PARAM_2 = 8'h7F;
 
 reg start;
 wire done;
@@ -44,8 +45,9 @@ i2c_send_single_command u_i2c_send_single_command(
 
     .start(start),
     .command(COMMAND),
-    .param(PARAM),
-    .with_param(1'b0),
+    .param_1(PARAM_1),
+    .param_2(PARAM_2),
+    .with_param(2'b10),
     .done(done),
     .busy(busy),
     .scl(scl),
