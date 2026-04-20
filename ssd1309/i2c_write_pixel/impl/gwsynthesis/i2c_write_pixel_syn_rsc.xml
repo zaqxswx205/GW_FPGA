@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="27" Lut="58" T_Register="77(27)" T_Lut="175(58)">
+ <SubModule name="u_i2c_write_any_length_pixel_data" Register="27" Lut="59" T_Register="50(27)" T_Lut="117(59)">
+  <SubModule name="u_i2c_send_one_byte" Register="16" Lut="49" T_Register="16(16)" T_Lut="49(49)"/>
+  <SubModule name="u_i2c_clock" Register="7" Lut="9" T_Register="7(7)" T_Lut="9(9)"/>
+ </SubModule>
+</Module>
