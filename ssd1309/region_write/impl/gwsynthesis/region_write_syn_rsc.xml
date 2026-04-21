@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="ssd1309_region_write" Register="10" Lut="19" T_Register="484(10)" T_Alu="15(0)" T_Lut="655(19)" T_Bsram="10(0)">
+ <SubModule name="gw_gao_inst_0" Register="420" Alu="15" Lut="507" Bsram="10" T_Register="420(420)" T_Alu="15(15)" T_Lut="507(507)" T_Bsram="10(10)"/>
+ <SubModule name="u_i2c_driver" Register="32" Lut="70" T_Register="54(32)" T_Lut="129(70)">
+  <SubModule name="u_i2c_send_one_byte" Register="15" Lut="49" T_Register="15(15)" T_Lut="49(49)"/>
+  <SubModule name="u_i2c_clock" Register="7" Lut="10" T_Register="7(7)" T_Lut="10(10)"/>
+ </SubModule>
+</Module>
