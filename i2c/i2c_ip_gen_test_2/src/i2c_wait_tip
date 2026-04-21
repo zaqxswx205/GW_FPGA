@@ -1,0 +1,91 @@
+module i2c_wait_tip(
+    input  wire       clk,
+    input  wire       rst_n,
+    input  wire       start,
+    input  wire [7:0] sr_data,
+
+    output reg        rx_en,
+    output reg  [2:0] raddr,
+    output reg        busy,
+    output reg        done
+);
+
+localparam [2:0]
+    ST_IDLE    = 3'd0,
+    ST_H_REQ   = 3'd1,
+    ST_H_WAIT  = 3'd2,
+    ST_H_CHECK = 3'd3,
+    ST_L_REQ   = 3'd4,
+    ST_L_WAIT  = 3'd5,
+    ST_L_CHECK = 3'd6;
+
+reg [2:0] st;
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        st    <= ST_IDLE;
+        rx_en <= 1'b0;
+        raddr <= 3'd0;
+        busy  <= 1'b0;
+        done  <= 1'b0;
+    end else begin
+        rx_en <= 1'b0;
+        done  <= 1'b0;
+
+        case (st)
+            ST_IDLE: begin
+                busy  <= 1'b0;
+                raddr <= 3'd4;
+                if (start) begin
+                    busy <= 1'b1;
+                    st   <= ST_H_REQ;
+                end
+            end
+
+            ST_H_REQ: begin
+                rx_en <= 1'b1;
+                raddr <= 3'd4; // SR address
+                st    <= ST_H_WAIT;
+            end
+
+            ST_H_WAIT: begin
+                st <= ST_H_CHECK;
+            end
+
+            ST_H_CHECK: begin
+                // First wait TIP=1: transfer really started.
+                if (sr_data[1])
+                    st <= ST_L_REQ;
+                else
+                    st <= ST_H_REQ;
+            end
+
+            ST_L_REQ: begin
+                rx_en <= 1'b1;
+                raddr <= 3'd4;
+                st    <= ST_L_WAIT;
+            end
+
+            ST_L_WAIT: begin
+                st <= ST_L_CHECK;
+            end
+
+            ST_L_CHECK: begin
+                // Then wait TIP=0: transfer completed.
+                if (!sr_data[1]) begin
+                    done <= 1'b1;
+                    busy <= 1'b0;
+                    st   <= ST_IDLE;
+                end else begin
+                    st <= ST_L_REQ;
+                end
+            end
+
+            default: begin
+                st <= ST_IDLE;
+            end
+        endcase
+    end
+end
+
+endmodule
