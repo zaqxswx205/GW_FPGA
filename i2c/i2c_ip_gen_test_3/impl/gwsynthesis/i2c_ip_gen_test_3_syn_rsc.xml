@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="7" Lut="10" T_Register="533(7)" T_Alu="15(0)" T_Lut="767(10)" T_Bsram="10(0)">
+ <SubModule name="gw_gao_inst_0" Register="391" Alu="15" Lut="496" Bsram="10" T_Register="391(391)" T_Alu="15(15)" T_Lut="496(496)" T_Bsram="10(10)"/>
+ <SubModule name="u_i2c_driver" Register="129" Lut="252" T_Register="135(129)" T_Lut="261(252)">
+  <SubModule name="u_i2c_wait_tip" Register="6" Lut="9" T_Register="6(6)" T_Lut="9(9)"/>
+ </SubModule>
+</Module>
