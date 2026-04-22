@@ -1,22 +1,13 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v'
-Undeclared symbol 'clk_27m', assumed default net type 'wire'("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":21)
-Undeclared symbol 'rst_n', assumed default net type 'wire'("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":22)
 Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\i2c_master\i2c_master.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\i2c_wait_tip.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v'
 Compiling module 'top'("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":1)
+Compiling module 'i2c_wait_tip'("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\i2c_wait_tip.v":1)
 Compiling module '**'("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\i2c_master\i2c_master.v":964)
-WARN  (EX1998) : Net 'tx_en' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":14)
-WARN  (EX1998) : Net 'waddr[2]' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":15)
-WARN  (EX1998) : Net 'wdata[7]' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":16)
-WARN  (EX1998) : Net 'rx_en' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":17)
-WARN  (EX1998) : Net 'raddr[2]' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":18)
-WARN  (EX1998) : Net 'clk_27m' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":21)
-WARN  (EX1998) : Net 'rst_n' does not have a driver("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":22)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input sys_clk is unused("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":2)
-WARN  (CV0016) : Input sys_rst_n is unused("C:\Project\gowin_fpga\github_project\i2c\i2c_ip_gen_test_2\src\top.v":3)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed

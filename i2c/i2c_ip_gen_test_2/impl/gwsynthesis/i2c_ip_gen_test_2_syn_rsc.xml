@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="100" Lut="182" T_Register="100(100)" T_Lut="182(182)"/>
+<Module name="top" Register="125" Lut="240" T_Register="131(125)" T_Lut="249(240)">
+ <SubModule name="u_i2c_wait_tip" Register="6" Lut="9" T_Register="6(6)" T_Lut="9(9)"/>
+</Module>
