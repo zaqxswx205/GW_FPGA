@@ -5,8 +5,8 @@ module i2c_driver(
     input  en,
     input  INIT,
     input  command_data,
-    input  [7:0] length,
-    input  [7:0] command,
+    input  [7:0] payload_len,
+    input  [63:0] data,
     output reg done,
     output reg busy,
     inout SCL,
@@ -14,7 +14,21 @@ module i2c_driver(
 );
 
 localparam RADDR = 3'd4;
-localparam EN_SEND = 8'h10;
+localparam PRESCALE_LOW_BYTE = 8'd53;
+localparam PRESCALE_LOW_ADDR = 3'd0;
+localparam PRESCALE_HIGH_BYTE = 8'd0;
+localparam PRESCALE_HIGH_ADDR = 3'd1;
+localparam CTRL_EN_BYTE = 8'h80;
+localparam CTRL_EN_ADDR = 3'd2;
+localparam TRANSMIT_ADDR = 3'd3;
+localparam COMMAND_ADDR = 3'd4;
+localparam START_AND_SEND = 8'h90;
+localparam SEND_EN_BYTE = 8'h10;
+localparam STOP_AND_SEND_BYTE = 8'h50;
+
+localparam I2C_DEVICE_ADDR = 8'h78;
+// localparam COMMAND_PRE = 8'h00;
+// localparam DATA_PRE = 8'h40;
 
 localparam [8:0]
     IDLE         = 9'b0_0000_0001,
@@ -45,6 +59,7 @@ reg  error_nack;
 reg [8:0] cur_state;
 reg [8:0] next_state;
 reg [1:0] hold_cnt;
+reg [7:0] byte_cnt;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) cur_state <= IDLE;
@@ -59,15 +74,15 @@ always @(*) begin
         end
         PRESCALE_L: next_state = (hold_cnt == 2'b11) ? PRESCALE_H : PRESCALE_L;
         PRESCALE_H: next_state = (hold_cnt == 2'b11) ? CTRL_EN : PRESCALE_H;
-        CTRL_EN: next_state = (hold_cnt == 2'b11) ? DONE : CTRL_EN;
-        START: next_state = (wait_done) ? COMMAND_DATA : START;
+        CTRL_EN   : next_state = (hold_cnt == 2'b11) ? DONE : CTRL_EN;
+        START     : next_state = (wait_done) ? COMMAND_DATA : START;
         COMMAND_DATA: begin
-            if (wait_done)next_state = (length == 8'd1) ? STOP : SEND;  
+            if (wait_done)next_state = (payload_len == 8'd1) ? STOP : SEND;  
             else next_state = COMMAND_DATA;
         end    
-        SEND: next_state = (wait_done) ? STOP : SEND;
+        SEND: next_state = (byte_cnt == 8'd1) ? STOP : SEND;
         STOP: next_state = (wait_done) ? DONE : STOP;
-        DONE: next_state = IDLE;
+        DONE: next_state = (done) ? IDLE : DONE;
         default: next_state = IDLE;
     endcase
 end
@@ -83,6 +98,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         error_nack <= 1'b0;
         done <= 1'b0;
         busy <= 1'b0;
+        byte_cnt <= 8'd0;
     end
     else begin
         tx_en <= 1'b0;
@@ -98,38 +114,40 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 error_nack <= 1'b0;
                 done <= 1'b0;
                 busy <= 1'b0;
+                byte_cnt <= 8'd0;
             end
             PRESCALE_L:begin
                 busy <= 1'b1;
                 tx_en <= 1'b1;
-                waddr <= 3'd0;
-                wdata <= 8'd53;
+                waddr <= PRESCALE_LOW_ADDR;
+                wdata <= PRESCALE_LOW_BYTE;
                 hold_cnt <= hold_cnt + 1'b1;
             end
             PRESCALE_H:begin
                 tx_en <= 1'b1;
-                waddr <= 3'd1;
-                wdata <= 8'd0;
+                waddr <= PRESCALE_HIGH_ADDR;
+                wdata <= PRESCALE_HIGH_BYTE;
                 hold_cnt <= hold_cnt + 1'b1;
             end
             CTRL_EN:begin
                 tx_en <= 1'b1;
-                waddr <= 3'd2;
-                wdata <= 8'h80;
+                waddr <= CTRL_EN_ADDR;
+                wdata <= CTRL_EN_BYTE;
                 hold_cnt <= hold_cnt + 1'b1;
             end
             START:begin
+                byte_cnt <= payload_len;
                 busy <= 1'b1;
                 if (hold_cnt == 2'b00) begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd3;
-                    wdata <= 8'h78;
+                    waddr <= TRANSMIT_ADDR;
+                    wdata <= I2C_DEVICE_ADDR;
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else if (hold_cnt == 2'b01)begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd4;
-                    wdata <= 8'h90;
+                    waddr <= COMMAND_ADDR;
+                    wdata <= START_AND_SEND;
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else begin
@@ -140,14 +158,15 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
             COMMAND_DATA:begin
                 if (hold_cnt == 2'b00) begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd3;
-                    wdata <= (command_data) ? 8'h40 : 8'h00;
+                    waddr <= TRANSMIT_ADDR;
+                    // wdata <= (command_data) ? DATA_PRE : COMMAND_PRE;
+                    wdata <= {1'b0,command_data,6'b00_0000};
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else if (hold_cnt == 2'b01)begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd4;
-                    wdata <= EN_SEND;
+                    waddr <= COMMAND_ADDR;
+                    wdata <= SEND_EN_BYTE;
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else begin
@@ -158,32 +177,33 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
             SEND:begin
                 if (hold_cnt == 2'b00) begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd3;
-                    wdata <= 8'h01;
+                    waddr <= TRANSMIT_ADDR;
+                    wdata <= data >> ((byte_cnt-1)*8);
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else if (hold_cnt == 2'b01)begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd4;
-                    wdata <= EN_SEND;
+                    waddr <= COMMAND_ADDR;
+                    wdata <= SEND_EN_BYTE;
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else begin
                     start <= 1'b1;
                     hold_cnt <= (wait_done) ? 2'd0 : hold_cnt;
+                    byte_cnt <= (wait_done) ? byte_cnt - 1'b1 : byte_cnt;
                 end
             end
             STOP:begin
                 if (hold_cnt == 2'b00) begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd3;
-                    wdata <= (length == 8'd1) ? command : 8'hae;
+                    waddr <= TRANSMIT_ADDR;
+                    wdata <= data[7:0];
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else if (hold_cnt == 2'b01)begin
                     tx_en <= 1'b1;
-                    waddr <= 3'd4;
-                    wdata <= 8'h50; 
+                    waddr <= COMMAND_ADDR;
+                    wdata <= STOP_AND_SEND_BYTE;    
                     hold_cnt <= hold_cnt + 1'b1;
                 end
                 else begin

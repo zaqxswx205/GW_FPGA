@@ -29,8 +29,9 @@ reg init;
 reg command_data;
 wire i2c_done;
 wire i2c_busy;
-reg [7:0] length;
+reg [7:0] payload_len;
 reg [7:0] command;
+reg [63:0] data;
 
 reg [6:0] cur_state;
 reg [6:0] next_state;
@@ -60,7 +61,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         en <= 1'b0;
         init <= 1'b0;
         command_data <= 1'b0;
-        length <= 8'd0;
+        payload_len <= 8'd0;
         command <= 8'd0;
     end
     else begin
@@ -70,7 +71,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 en <= 1'b0;
                 init <= 1'b0;
                 command_data <= 1'b0;
-                length <= 8'd0;
+                payload_len <= 8'd0;
                 command <= 8'd0;
             end
             INIT:begin
@@ -81,39 +82,41 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
             SET_PAGE:begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
                 init <= 1'b0;
-                length <= 8'd1;
-                command <= PAGE;
+                payload_len <= 8'd1;
+                data <= {PAGE};
                 command_data <= 1'b0;
             end
             SET_START_COL:begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
                 init <= 1'b0;
-                length <= 8'd1;
-                command <= START_COL;
+                payload_len <= 8'd1;
+                data <= {START_COL};
                 command_data <= 1'b0;
             end
             SET_STOP_COL:begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
                 init <= 1'b0;
-                length <= 8'd1;
-                command <= STOP_COL;
+                payload_len <= 8'd1;
+                data <= {STOP_COL};
                 command_data <= 1'b0;
             end
             WRITE_PIXEL:begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
                 init <= 1'b0;
-                length <= 8'd1;
-                command <= PIXEL_DATA;
+                payload_len <= 8'd8;
+                data <= {PIXEL_DATA+8'd1,PIXEL_DATA+8'd2,PIXEL_DATA+8'd3,PIXEL_DATA+8'd4,PIXEL_DATA+8'd5,PIXEL_DATA+8'd6,PIXEL_DATA+8'd7,PIXEL_DATA+8'd8};
                 command_data <= 1'b1;
             end
             STOP:begin
                 en <= 1'b0;
                 init <= 1'b0;
+                payload_len <= 8'd0;
                 command_data <= 1'b0;
             end
             default:begin
                 en <= 1'b0;
                 init <= 1'b0;
+                payload_len <= 8'd0;
                 command_data <= 1'b0;
             end
         endcase
@@ -127,8 +130,8 @@ i2c_driver u_i2c_driver(
     .en(en),
     .INIT(init),
     .command_data(command_data),
-    .length(length),
-    .command(command),
+    .payload_len(payload_len),
+    .data(data),
     .done(i2c_done),
     .busy(i2c_busy),
     .SCL(SCL),
