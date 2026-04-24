@@ -2,10 +2,6 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "C:/Project/gowin_fpga/github_project/test/src/i2c_clock.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Project/gowin_fpga/github_project/test/src/top.v",
    "Type" : "verilog"
   }

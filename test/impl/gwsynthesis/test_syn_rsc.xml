@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="1" Lut="4" T_Register="303(1)" T_Alu="13(0)" T_Lut="430(4)" T_Bsram="3(0)">
- <SubModule name="gw_gao_inst_0" Register="288" Alu="13" Lut="407" Bsram="3" T_Register="288(288)" T_Alu="13(13)" T_Lut="407(407)" T_Bsram="3(3)"/>
- <SubModule name="u_i2c_clock" Register="14" Lut="19" T_Register="14(14)" T_Lut="19(19)"/>
+<Module name="top" Register="14" Lut="26" T_Register="326(14)" T_Alu="16(0)" T_Lut="505(26)" T_Bsram="9(0)">
+ <SubModule name="gw_gao_inst_0" Register="312" Alu="16" Lut="479" Bsram="9" T_Register="312(312)" T_Alu="16(16)" T_Lut="479(479)" T_Bsram="9(9)"/>
 </Module>

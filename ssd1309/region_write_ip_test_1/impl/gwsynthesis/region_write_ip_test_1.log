@@ -1,0 +1,33 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_driver.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_wait_tip.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\top.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_master\i2c_master.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_step_engine.v'
+Compiling module 'top'("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\top.v":1)
+Compiling module 'i2c_driver'("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_driver.v":1)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 8("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_driver.v":173)
+Compiling module 'i2c_step_engine'("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_step_engine.v":1)
+Compiling module 'i2c_wait_tip'("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_wait_tip.v":1)
+Compiling module '**'("C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\src\i2c_master\i2c_master.v":964)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\impl\gwsynthesis\region_write_ip_test_1.vg" completed
+[100%] Generate report file "C:\Project\gowin_fpga\github_project\ssd1309\region_write_ip_test_1\impl\gwsynthesis\region_write_ip_test_1_syn.rpt.html" completed
+GowinSynthesis finish

@@ -82,7 +82,7 @@ always @(*) begin
         end    
         SEND: next_state = (byte_cnt == 8'd1) ? STOP : SEND;
         STOP: next_state = (wait_done) ? DONE : STOP;
-        DONE: next_state = (done) ? IDLE : DONE;
+        DONE: next_state = IDLE;
         default: next_state = IDLE;
     endcase
 end

@@ -1,10 +1,18 @@
 module gw_gao(
-    signal_1,
-    signal_1_d,
-    signal_1_r,
-    signal_1_f,
-    \u_i2c_clock/i2c_clk ,
-    \u_i2c_clock/i2c_clk_half ,
+    \cur_state[4] ,
+    \cur_state[3] ,
+    \cur_state[2] ,
+    \cur_state[1] ,
+    \cur_state[0] ,
+    \byte_cnt[7] ,
+    \byte_cnt[6] ,
+    \byte_cnt[5] ,
+    \byte_cnt[4] ,
+    \byte_cnt[3] ,
+    \byte_cnt[2] ,
+    \byte_cnt[1] ,
+    \byte_cnt[0] ,
+    done,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -12,24 +20,40 @@ module gw_gao(
     tdo_pad_o
 );
 
-input signal_1;
-input signal_1_d;
-input signal_1_r;
-input signal_1_f;
-input \u_i2c_clock/i2c_clk ;
-input \u_i2c_clock/i2c_clk_half ;
+input \cur_state[4] ;
+input \cur_state[3] ;
+input \cur_state[2] ;
+input \cur_state[1] ;
+input \cur_state[0] ;
+input \byte_cnt[7] ;
+input \byte_cnt[6] ;
+input \byte_cnt[5] ;
+input \byte_cnt[4] ;
+input \byte_cnt[3] ;
+input \byte_cnt[2] ;
+input \byte_cnt[1] ;
+input \byte_cnt[0] ;
+input done;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire signal_1;
-wire signal_1_d;
-wire signal_1_r;
-wire signal_1_f;
-wire \u_i2c_clock/i2c_clk ;
-wire \u_i2c_clock/i2c_clk_half ;
+wire \cur_state[4] ;
+wire \cur_state[3] ;
+wire \cur_state[2] ;
+wire \cur_state[1] ;
+wire \cur_state[0] ;
+wire \byte_cnt[7] ;
+wire \byte_cnt[6] ;
+wire \byte_cnt[5] ;
+wire \byte_cnt[4] ;
+wire \byte_cnt[3] ;
+wire \byte_cnt[2] ;
+wire \byte_cnt[1] ;
+wire \byte_cnt[0] ;
+wire done;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -104,9 +128,8 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i(signal_1_r),
-    .trig1_i(signal_1_f),
-    .data_i({signal_1,signal_1_d,signal_1_r,signal_1_f,\u_i2c_clock/i2c_clk ,\u_i2c_clock/i2c_clk_half }),
+    .trig0_i(done),
+    .data_i({\cur_state[4] ,\cur_state[3] ,\cur_state[2] ,\cur_state[1] ,\cur_state[0] ,\byte_cnt[7] ,\byte_cnt[6] ,\byte_cnt[5] ,\byte_cnt[4] ,\byte_cnt[3] ,\byte_cnt[2] ,\byte_cnt[1] ,\byte_cnt[0] ,done}),
     .clk_i(sys_clk)
 );
 

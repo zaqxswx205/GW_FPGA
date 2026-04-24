@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\Project\gowin_fpga\github_project\test\src\test.cst
 -cfg C:\Project\gowin_fpga\github_project\test\impl\pnr\device.cfg
--gao_crc 1011111100010010
+-gao_crc 0000001001001101
 -bit
 -tr
 -ph

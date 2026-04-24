@@ -2,26 +2,34 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="sys_clk" trig_type="0" storage_depth="1024" window_num="1" capture_amount="1024" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+    <AoCore index="0" sample_clock="sys_clk" trig_type="0" storage_depth="8192" window_num="1" capture_amount="8192" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
         <SignalList>
-            <Signal capture_enable="true">signal_1</Signal>
-            <Signal capture_enable="true">signal_1_d</Signal>
-            <Signal capture_enable="true">signal_1_r</Signal>
-            <Signal capture_enable="true">signal_1_f</Signal>
-            <Signal capture_enable="true">u_i2c_clock/i2c_clk</Signal>
-            <Signal capture_enable="true">u_i2c_clock/i2c_clk_half</Signal>
+            <Bus capture_enable="true" name="cur_state[4:0]">
+                <Signal>cur_state[4]</Signal>
+                <Signal>cur_state[3]</Signal>
+                <Signal>cur_state[2]</Signal>
+                <Signal>cur_state[1]</Signal>
+                <Signal>cur_state[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="byte_cnt[7:0]">
+                <Signal>byte_cnt[7]</Signal>
+                <Signal>byte_cnt[6]</Signal>
+                <Signal>byte_cnt[5]</Signal>
+                <Signal>byte_cnt[4]</Signal>
+                <Signal>byte_cnt[3]</Signal>
+                <Signal>byte_cnt[2]</Signal>
+                <Signal>byte_cnt[1]</Signal>
+                <Signal>byte_cnt[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">done</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
                 <SignalList>
-                    <Signal>signal_1_r</Signal>
+                    <Signal>done</Signal>
                 </SignalList>
             </Trigger>
-            <Trigger index="1">
-                <SignalList>
-                    <Signal>signal_1_f</Signal>
-                </SignalList>
-            </Trigger>
+            <Trigger index="1"/>
             <Trigger index="2"/>
             <Trigger index="3"/>
             <Trigger index="4"/>
@@ -39,7 +47,7 @@
         </Triggers>
         <MatchUnits>
             <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="0"/>
-            <MatchUnit index="1" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="1"/>
+            <MatchUnit index="1" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
@@ -57,8 +65,7 @@
         </MatchUnits>
         <Expressions type="Dynamic" ex_implementation="0">
             <Expression>M0</Expression>
-            <Expression>M1</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1011111100010010</GAO_ID>
+    <GAO_ID>0000001001001101</GAO_ID>
 </GAO_CONFIG>
