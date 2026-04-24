@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="17" Lut="24" T_Register="160(17)" T_Lut="323(24)">
- <SubModule name="u_i2c_driver" Register="137" Lut="290" T_Register="143(137)" T_Lut="299(290)">
-  <SubModule name="u_i2c_wait_tip" Register="6" Lut="9" T_Register="6(6)" T_Lut="9(9)"/>
- </SubModule>
-</Module>

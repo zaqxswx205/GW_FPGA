@@ -6,19 +6,19 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/i2c_wait_tip.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/top.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/i2c_master/i2c_master.v",
    "Type" : "verilog"
   },
   {
    "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/i2c_step_engine.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/i2c_wait_tip.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/ssd1309/region_write_ip_test_1/src/top.v",
    "Type" : "verilog"
   }
  ],

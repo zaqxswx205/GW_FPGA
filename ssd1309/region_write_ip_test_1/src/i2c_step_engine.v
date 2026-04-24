@@ -13,12 +13,10 @@ module i2c_step_engine(
     input [7:0] op1_wdata,
     input op1_mode,
     input [2:0] op1_raddr,
-    input [7:0] op1_match_data,
 
     input use_phase2,
     input op2_mode,
     input [2:0] op2_raddr,
-    input [7:0] op2_match_data,
 
     input wait_done,
 
@@ -28,13 +26,14 @@ module i2c_step_engine(
     output reg start,
     output reg mode,
     output reg [2:0] raddr,
-    output reg [7:0] match_data,
+    output reg [7:0] expected_data,
     output reg running,
-    output reg done,
-    output reg [1:0] phase
+    output reg done
 );
 
 localparam [2:0] CHECK_SEND = 3'd4;
+
+reg [1:0] phase;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) begin
@@ -44,7 +43,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         start <= 1'b0;
         mode <= 1'b0;
         raddr <= CHECK_SEND;
-        match_data <= 8'd0;
+        expected_data <= 8'd0;
         running <= 1'b0;
         done <= 1'b0;
         phase <= 2'd0;
@@ -76,13 +75,12 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                     end
                     mode <= op1_mode;
                     raddr <= op1_raddr;
-                    match_data <= op1_match_data;
+                    expected_data <= op1_wdata;
                     phase <= (use_phase2) ? 2'd2 : 2'd3;
                 end
                 2'd2: begin
                     mode <= op2_mode;
                     raddr <= op2_raddr;
-                    match_data <= op2_match_data;
                     phase <= 2'd3;
                 end
                 2'd3: begin

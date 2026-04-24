@@ -4,7 +4,7 @@ module i2c_wait_tip(
 
     input start,
     input [7:0] rdata,
-    input [7:0] match_data,
+    input [7:0] expected_data,
     input mode,
 
     output reg rx_en,
@@ -102,7 +102,9 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 busy <= 1'b0;
                 done <= 1'b1;
                 rx_en <= 1'b0;
-                ack_error <= timeout_hit | rdata[7];
+                // mode_latched=0: register readback check
+                // mode_latched=1: normal send path check (timeout/ack)
+                ack_error <= (mode_latched) ? (timeout_hit | rdata[7]) : (rdata != expected_data);
             end
             default:begin
                 busy <= 1'b0;

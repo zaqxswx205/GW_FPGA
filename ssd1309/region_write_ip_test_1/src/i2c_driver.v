@@ -55,7 +55,6 @@ reg [7:0] byte_cnt;
 reg step_start;
 wire step_running;
 wire step_done;
-wire [1:0] step_phase;
 
 reg cfg_op0_tx_valid;
 reg [2:0] cfg_op0_waddr;
@@ -65,18 +64,16 @@ reg [2:0] cfg_op1_waddr;
 reg [7:0] cfg_op1_wdata;
 reg cfg_op1_mode;
 reg [2:0] cfg_op1_raddr;
-reg [7:0] cfg_op1_match_data;
 reg cfg_use_phase2;
 reg cfg_op2_mode;
 reg [2:0] cfg_op2_raddr;
-reg [7:0] cfg_op2_match_data;
 
 wire tx_en;
 wire [2:0] waddr;
 wire [7:0] wdata;
 wire mode;
 wire [2:0] raddr;
-wire [7:0] match_data;
+wire [7:0] expected_data;
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n) cur_state <= IDLE;
@@ -89,9 +86,9 @@ always @(*) begin
             if (en) next_state = (INIT) ? PRESCALE_L : START;
             else next_state = IDLE;
         end
-        PRESCALE_L: next_state = (step_done) ? PRESCALE_H : PRESCALE_L;
-        PRESCALE_H: next_state = (step_done) ? CTRL_EN : PRESCALE_H;
-        CTRL_EN: next_state = (step_done) ? DONE : CTRL_EN;
+        PRESCALE_L: next_state = (step_done) ? ((ack_error) ? PRESCALE_L : PRESCALE_H) : PRESCALE_L;
+        PRESCALE_H: next_state = (step_done) ? ((ack_error) ? PRESCALE_H : CTRL_EN) : PRESCALE_H;
+        CTRL_EN: next_state = (step_done) ? ((ack_error) ? CTRL_EN : DONE) : CTRL_EN;
         START: next_state = (step_done) ? COMMAND_DATA : START;
         COMMAND_DATA: next_state = (step_done) ? ((payload_len == 8'd1) ? STOP : SEND) : COMMAND_DATA;
         SEND: next_state = (step_done) ? ((byte_cnt == 8'd1) ? STOP : SEND) : SEND;
@@ -110,11 +107,9 @@ always @(*) begin
     cfg_op1_wdata = 8'd0;
     cfg_op1_mode = 1'b0;
     cfg_op1_raddr = CHECK_SEND;
-    cfg_op1_match_data = 8'd0;
     cfg_use_phase2 = 1'b0;
     cfg_op2_mode = 1'b0;
     cfg_op2_raddr = CHECK_SEND;
-    cfg_op2_match_data = 8'd0;
 
     case (cur_state)
         PRESCALE_L: begin
@@ -123,7 +118,6 @@ always @(*) begin
             cfg_op0_wdata = PRESCALE_LOW_BYTE;
             cfg_op1_mode = 1'b0;
             cfg_op1_raddr = PRESCALE_LOW_ADDR;
-            cfg_op1_match_data = PRESCALE_LOW_BYTE;
         end
         PRESCALE_H: begin
             cfg_op0_tx_valid = 1'b1;
@@ -131,7 +125,6 @@ always @(*) begin
             cfg_op0_wdata = PRESCALE_HIGH_BYTE;
             cfg_op1_mode = 1'b0;
             cfg_op1_raddr = PRESCALE_HIGH_ADDR;
-            cfg_op1_match_data = PRESCALE_HIGH_BYTE;
         end
         CTRL_EN: begin
             cfg_op0_tx_valid = 1'b1;
@@ -139,7 +132,6 @@ always @(*) begin
             cfg_op0_wdata = CTRL_EN_BYTE;
             cfg_op1_mode = 1'b0;
             cfg_op1_raddr = CTRL_EN_ADDR;
-            cfg_op1_match_data = CTRL_EN_BYTE;
         end
         START: begin
             cfg_op0_tx_valid = 1'b1;
@@ -259,11 +251,9 @@ i2c_step_engine u_i2c_step_engine(
     .op1_wdata(cfg_op1_wdata),
     .op1_mode(cfg_op1_mode),
     .op1_raddr(cfg_op1_raddr),
-    .op1_match_data(cfg_op1_match_data),
     .use_phase2(cfg_use_phase2),
     .op2_mode(cfg_op2_mode),
     .op2_raddr(cfg_op2_raddr),
-    .op2_match_data(cfg_op2_match_data),
     .wait_done(wait_done),
     .tx_en(tx_en),
     .waddr(waddr),
@@ -271,17 +261,16 @@ i2c_step_engine u_i2c_step_engine(
     .start(start_wait),
     .mode(mode),
     .raddr(raddr),
-    .match_data(match_data),
+    .expected_data(expected_data),
     .running(step_running),
-    .done(step_done),
-    .phase(step_phase)
+    .done(step_done)
 );
 
 i2c_wait_tip u_i2c_wait_tip(
     .sys_clk(sys_clk),
     .sys_rst_n(sys_rst_n),
     .start(start_wait),
-    .match_data(match_data),
+    .expected_data(expected_data),
     .rdata(rdata),
     .mode(mode),
     .rx_en(rx_en),
