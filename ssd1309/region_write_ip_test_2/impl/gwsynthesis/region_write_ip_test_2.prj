@@ -5,10 +5,10 @@
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_driver.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_master\i2c_master.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_step_engine.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_wait_tip.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\top.v" type="verilog"/>
-        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_master\i2c_master.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

@@ -1,10 +1,10 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_driver.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_master\i2c_master.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_step_engine.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_wait_tip.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\top.v'
-Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_master\i2c_master.v'
 Compiling module 'top'("D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\top.v":1)
 Compiling module 'i2c_driver'("D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_driver.v":1)
 WARN  (EX3791) : Expression size 64 truncated to fit in target size 8("D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\region_write_ip_test_2\src\i2c_driver.v":165)

@@ -12,30 +12,33 @@ parameter STOP_COL   = 8'd127;
 parameter PAGE_START = 8'd1;
 parameter PAGE_END   = 8'd1;
 
-localparam [22:0]
-    IDLE              = (23'd1 << 0),
-    I2C_INIT          = (23'd1 << 1),
-    INIT_CMD_UNLOCK   = (23'd1 << 2),
-    INIT_DISPLAY_OFF  = (23'd1 << 3),
-    INIT_SCROLL_OFF   = (23'd1 << 4),
-    INIT_CLOCK_DIV    = (23'd1 << 5),
-    INIT_MUX          = (23'd1 << 6),
-    INIT_OFFSET       = (23'd1 << 7),
-    INIT_START_LINE   = (23'd1 << 8),
-    INIT_SEG_REMAP    = (23'd1 << 9),
-    INIT_COM_SCAN     = (23'd1 << 10),
-    INIT_COM_PINS     = (23'd1 << 11),
-    INIT_CONTRAST     = (23'd1 << 12),
-    INIT_DISPLAY_RAM  = (23'd1 << 13),
-    INIT_NORMAL_DISP  = (23'd1 << 14),
-    INIT_PRECHARGE    = (23'd1 << 15),
-    INIT_VCOMH        = (23'd1 << 16),
-    INIT_MEMORY_MODE  = (23'd1 << 17),
-    INIT_DISPLAY_ON   = (23'd1 << 18),
-    SET_COLUMN_ADDR   = (23'd1 << 19),
-    SET_PAGE_ADDR     = (23'd1 << 20),
-    WRITE_PIXEL       = (23'd1 << 21),
-    STOP              = (23'd1 << 22);
+localparam [25:0]
+    IDLE              = (26'd1 << 0),
+    I2C_INIT          = (26'd1 << 1),
+    INIT_CMD_UNLOCK   = (26'd1 << 2),
+    INIT_DISPLAY_OFF  = (26'd1 << 3),
+    INIT_SCROLL_OFF   = (26'd1 << 4),
+    INIT_CLOCK_DIV    = (26'd1 << 5),
+    INIT_MUX          = (26'd1 << 6),
+    INIT_OFFSET       = (26'd1 << 7),
+    INIT_START_LINE   = (26'd1 << 8),
+    INIT_SEG_REMAP    = (26'd1 << 9),
+    INIT_COM_SCAN     = (26'd1 << 10),
+    INIT_COM_PINS     = (26'd1 << 11),
+    INIT_CONTRAST     = (26'd1 << 12),
+    INIT_DISPLAY_RAM  = (26'd1 << 13),
+    INIT_NORMAL_DISP  = (26'd1 << 14),
+    INIT_PRECHARGE    = (26'd1 << 15),
+    INIT_VCOMH        = (26'd1 << 16),
+    INIT_MEMORY_MODE  = (26'd1 << 17),
+    INIT_DISPLAY_ON   = (26'd1 << 18),
+    CLEAR_COLUMN_ADDR = (26'd1 << 19),
+    CLEAR_PAGE_ADDR   = (26'd1 << 20),
+    CLEAR_SCREEN      = (26'd1 << 21),
+    SET_COLUMN_ADDR   = (26'd1 << 22),
+    SET_PAGE_ADDR     = (26'd1 << 23),
+    WRITE_PIXEL       = (26'd1 << 24),
+    STOP              = (26'd1 << 25);
 
 reg en;
 reg init;
@@ -46,9 +49,10 @@ reg [7:0] payload_len;
 reg [63:0] data;
 
 reg ssd1309_init_done;
-reg [22:0] cur_state;
-reg [22:0] next_state;
+reg [25:0] cur_state;
+reg [25:0] next_state;
 reg [3:0] digit_index;
+reg [7:0] clear_index;
 
 function [63:0] digit_bitmap;
     input [3:0] digit;
@@ -95,7 +99,10 @@ always @(*) begin
         INIT_PRECHARGE:   next_state = (i2c_done) ? INIT_VCOMH : INIT_PRECHARGE;
         INIT_VCOMH:       next_state = (i2c_done) ? INIT_MEMORY_MODE : INIT_VCOMH;
         INIT_MEMORY_MODE: next_state = (i2c_done) ? INIT_DISPLAY_ON : INIT_MEMORY_MODE;
-        INIT_DISPLAY_ON:  next_state = (i2c_done) ? SET_COLUMN_ADDR : INIT_DISPLAY_ON;
+        INIT_DISPLAY_ON:  next_state = (i2c_done) ? CLEAR_COLUMN_ADDR : INIT_DISPLAY_ON;
+        CLEAR_COLUMN_ADDR:next_state = (i2c_done) ? CLEAR_PAGE_ADDR : CLEAR_COLUMN_ADDR;
+        CLEAR_PAGE_ADDR:  next_state = (i2c_done) ? CLEAR_SCREEN : CLEAR_PAGE_ADDR;
+        CLEAR_SCREEN:     next_state = (i2c_done) ? ((clear_index == 8'd127) ? SET_COLUMN_ADDR : CLEAR_SCREEN) : CLEAR_SCREEN;
         SET_COLUMN_ADDR:  next_state = (i2c_done) ? SET_PAGE_ADDR : SET_COLUMN_ADDR;
         SET_PAGE_ADDR:    next_state = (i2c_done) ? WRITE_PIXEL : SET_PAGE_ADDR;
         WRITE_PIXEL:      next_state = (i2c_done) ? ((digit_index == 4'd9) ? STOP : WRITE_PIXEL) : WRITE_PIXEL;
@@ -113,11 +120,12 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         data <= 64'd0;
         ssd1309_init_done <= 1'b0;
         digit_index <= 4'd1;
+        clear_index <= 8'd0;
     end
     else begin
         en <= 1'b0;
 
-        if (cur_state == INIT_DISPLAY_ON && i2c_done)
+        if (cur_state == CLEAR_SCREEN && i2c_done && clear_index == 8'd127)
             ssd1309_init_done <= 1'b1;
 
         case (cur_state)
@@ -128,6 +136,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 data <= 64'd0;
                 ssd1309_init_done <= 1'b0;
                 digit_index <= 4'd1;
+                clear_index <= 8'd0;
             end
             I2C_INIT: begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
@@ -254,6 +263,29 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 command_data <= 1'b0;
                 payload_len <= 8'd1;
                 data <= 8'haf;
+            end
+            CLEAR_COLUMN_ADDR: begin
+                en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
+                init <= 1'b0;
+                command_data <= 1'b0;
+                payload_len <= 8'd3;
+                data <= {8'h21, 8'd0, 8'd127};
+            end
+            CLEAR_PAGE_ADDR: begin
+                en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
+                init <= 1'b0;
+                command_data <= 1'b0;
+                payload_len <= 8'd3;
+                data <= {8'h22, 8'd0, 8'd7};
+            end
+            CLEAR_SCREEN: begin
+                en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
+                init <= 1'b0;
+                command_data <= 1'b1;
+                payload_len <= 8'd8;
+                data <= 64'd0;
+                if (i2c_done && clear_index < 8'd127)
+                    clear_index <= clear_index + 1'b1;
             end
             SET_COLUMN_ADDR: begin
                 en <= (!i2c_busy && !i2c_done) ? 1'b1 : 1'b0;
