@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="73" Lut="187" T_Register="263(73)" T_Lut="579(187)">
+ <SubModule name="u_i2c_driver" Register="143" Lut="304" T_Register="190(143)" T_Lut="392(304)">
+  <SubModule name="u_i2c_step_engine" Register="24" Lut="42" T_Register="24(24)" T_Lut="42(42)"/>
+  <SubModule name="u_i2c_wait_tip" Register="23" Lut="46" T_Register="23(23)" T_Lut="46(46)"/>
+ </SubModule>
+</Module>
