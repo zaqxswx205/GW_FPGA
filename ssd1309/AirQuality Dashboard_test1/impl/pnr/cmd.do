@@ -1,0 +1,17 @@
+-d D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\AirQuality Dashboard_test1\impl\gwsynthesis\AirQuality Dashboard_test1.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\AirQuality Dashboard_test1\src\i2c_ip_gen_test_2.cst
+-cfg D:\Project\fpga\gw-fpga\GW_FPGA\ssd1309\AirQuality Dashboard_test1\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000

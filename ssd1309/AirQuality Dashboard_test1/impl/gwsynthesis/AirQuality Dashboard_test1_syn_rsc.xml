@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="ssd1309_driver" Register="55" Lut="301" T_Register="245(55)" T_Lut="670(301)">
+ <SubModule name="u_i2c_driver" Register="143" Lut="277" T_Register="190(143)" T_Lut="369(277)">
+  <SubModule name="u_i2c_step_engine" Register="24" Lut="45" T_Register="24(24)" T_Lut="45(45)"/>
+  <SubModule name="u_i2c_wait_tip" Register="23" Lut="47" T_Register="23(23)" T_Lut="47(47)"/>
+ </SubModule>
+</Module>
