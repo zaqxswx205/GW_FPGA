@@ -1,0 +1,92 @@
+[
+ {
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+    "InstLine" : 25,
+    "InstName" : "u_pms9103_data",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/pms9103_data.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "pms9103_data",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/pms9103_data.v",
+      "InstLine" : 134,
+      "InstName" : "u_uart_rx",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/uart_rx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_rx"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+    "InstLine" : 38,
+    "InstName" : "u_ze08_ch2o_data",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ze08_ch2o_data.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ze08_ch2o_data",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ze08_ch2o_data.v",
+      "InstLine" : 95,
+      "InstName" : "u_uart_rx",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/uart_rx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_rx"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+    "InstLine" : 83,
+    "InstName" : "u_ssd1309_driver",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ssd1309_driver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ssd1309_driver",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ssd1309_driver.v",
+      "InstLine" : 1086,
+      "InstName" : "u_i2c_driver",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_driver.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "i2c_driver",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_driver.v",
+        "InstLine" : 282,
+        "InstName" : "u_i2c",
+        "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_master/i2c_master.v",
+        "ModuleLine" : 9,
+        "ModuleName" : "I2C_MASTER_Top"
+       },
+       {
+        "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_driver.v",
+        "InstLine" : 242,
+        "InstName" : "u_i2c_step_engine",
+        "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_step_engine.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "i2c_step_engine"
+       },
+       {
+        "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_driver.v",
+        "InstLine" : 269,
+        "InstName" : "u_i2c_wait_tip",
+        "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_wait_tip.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "i2c_wait_tip"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

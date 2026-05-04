@@ -1,25 +1,25 @@
 [
  {
-  "InstFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/top.v",
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/top.v",
   "InstLine" : 1,
   "InstName" : "top",
-  "ModuleFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/top.v",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/top.v",
   "ModuleLine" : 1,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/top.v",
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/top.v",
     "InstLine" : 10,
     "InstName" : "u_pms9103_data",
-    "ModuleFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/pms9103_data.v",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/pms9103_data.v",
     "ModuleLine" : 1,
     "ModuleName" : "pms9103_data",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/pms9103_data.v",
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/pms9103_data.v",
       "InstLine" : 135,
       "InstName" : "u_uart_rx",
-      "ModuleFile" : "C:/Project/gowin_fpga/github_project/pms9103m/src/uart_rx.v",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/pms9103m/src/uart_rx.v",
       "ModuleLine" : 1,
       "ModuleName" : "uart_rx"
      }

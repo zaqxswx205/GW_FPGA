@@ -1,8 +1,8 @@
--d C:\Project\gowin_fpga\github_project\pms9103m\impl\gwsynthesis\pms9103m.vg
+-d D:\Project\fpga\gw-fpga\GW_FPGA\pms9103m\impl\gwsynthesis\pms9103m.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\Project\gowin_fpga\github_project\pms9103m\src\uart_start_bit.cst
--cfg C:\Project\gowin_fpga\github_project\pms9103m\impl\pnr\device.cfg
+-cst D:\Project\fpga\gw-fpga\GW_FPGA\pms9103m\src\uart_start_bit.cst
+-cfg D:\Project\fpga\gw-fpga\GW_FPGA\pms9103m\impl\pnr\device.cfg
 -gao_crc 1101110100100011
 -bit
 -tr

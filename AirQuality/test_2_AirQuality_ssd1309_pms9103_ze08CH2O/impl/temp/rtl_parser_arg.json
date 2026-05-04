@@ -1,0 +1,49 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_driver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_step_engine.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_wait_tip.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/pms9103_data.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ssd1309_driver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/uart_rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/i2c_master/i2c_master.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/src/ze08_ch2o_data.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_2_AirQuality_ssd1309_pms9103_ze08CH2O/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

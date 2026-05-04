@@ -1,0 +1,19 @@
+-d D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\gwsynthesis\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\src\i2c_ip_gen_test_2.cst
+-cfg D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\device.cfg
+-gao_crc 1000011111111011
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000
+-rtl_gao

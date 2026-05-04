@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Lut="1" T_Register="1695(0)" T_Alu="25(0)" T_Lut="1990(1)" T_Bsram="14(0)">
+ <SubModule name="gw_gao_inst_0" Register="693" Alu="14" Lut="504" Bsram="14" T_Register="693(693)" T_Alu="14(14)" T_Lut="504(504)" T_Bsram="14(14)"/>
+ <SubModule name="u_pms9103_data" Register="258" Lut="210" T_Register="300(258)" T_Lut="263(210)">
+  <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
+ </SubModule>
+ <SubModule name="u_ze08_ch2o_data" Register="42" Lut="52" T_Register="84(42)" T_Lut="105(52)">
+  <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
+ </SubModule>
+ <SubModule name="u_ssd1309_driver" Register="441" Alu="11" Lut="756" T_Register="618(441)" T_Alu="11(11)" T_Lut="1117(756)">
+  <SubModule name="u_i2c_driver" Register="143" Lut="301" T_Register="177(143)" T_Lut="361(301)">
+   <SubModule name="u_i2c_step_engine" Register="24" Lut="40" T_Register="24(24)" T_Lut="40(40)"/>
+   <SubModule name="u_i2c_wait_tip" Register="10" Lut="20" T_Register="10(10)" T_Lut="20(20)"/>
+  </SubModule>
+ </SubModule>
+</Module>
