@@ -1,0 +1,31 @@
+Reading netlist file: "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\gwsynthesis\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.vg"
+Parsing netlist file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\gwsynthesis\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\src\i2c_ip_gen_test_2.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'sys_clk' was determined to be a clock but was not created.
+WARN  (TA1132) :  'tck_pad_i' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.power.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.pin.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.rpt.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.rpt.txt" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_2_AirQuality_ssd1309_pms9103_ze08CH2O\impl\pnr\test_2_AirQuality_ssd1309_pms9103_ze08CH2O.tr.html" completed
+Mon May  4 16:32:46 2026
+
