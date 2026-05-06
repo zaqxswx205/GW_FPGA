@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="30" Lut="63" T_Register="89(30)" T_Lut="142(63)">
+ <SubModule name="u_spi_driver" Register="59" Lut="79" T_Register="59(59)" T_Lut="79(79)"/>
+</Module>

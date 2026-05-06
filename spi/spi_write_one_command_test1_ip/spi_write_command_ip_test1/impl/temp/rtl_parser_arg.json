@@ -1,0 +1,25 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/spi/spi_write_one_command_test1_ip/spi_write_command_ip_test1/src/spi_driver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/spi/spi_write_one_command_test1_ip/spi_write_command_ip_test1/src/spi_master/spi_master.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/spi/spi_write_one_command_test1_ip/spi_write_command_ip_test1/src/top.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_one_command_test1_ip/spi_write_command_ip_test1/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}
