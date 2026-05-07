@@ -1,0 +1,29 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\spi_master\spi_master.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\spi_driver.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\top.v'
+Compiling module 'top'("C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\top.v":1)
+Compiling module 'spi_driver'("C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\spi_driver.v":1)
+Compiling module '**'("C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\spi_master\spi_master.v":528)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "MISO_SLAVE" of module "SPI_MASTER_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\src\spi_master\spi_master.v":528)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\impl\gwsynthesis\spi_write_command_with_parameter.vg" completed
+[100%] Generate report file "C:\Project\gowin_fpga\github_project\spi\spi_write_command_with_parameter\impl\gwsynthesis\spi_write_command_with_parameter_syn.rpt.html" completed
+GowinSynthesis finish

@@ -1,0 +1,30 @@
+[
+ {
+  "InstFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/top.v",
+    "InstLine" : 102,
+    "InstName" : "u_spi_driver",
+    "ModuleFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/spi_driver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_driver",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/spi_driver.v",
+      "InstLine" : 116,
+      "InstName" : "your_instance_name",
+      "ModuleFile" : "C:/Project/gowin_fpga/github_project/spi/spi_write_command_with_parameter/src/spi_master/spi_master.v",
+      "ModuleLine" : 9,
+      "ModuleName" : "SPI_MASTER_Top"
+     }
+    ]
+   }
+  ]
+ }
+]
