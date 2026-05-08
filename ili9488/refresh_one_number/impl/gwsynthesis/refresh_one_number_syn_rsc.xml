@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_ili9488_show_one" Register="30" Lut="49" T_Register="192(30)" T_Lut="393(49)">
+ <SubModule name="u_ili9488_ctrl" Register="94" Lut="244" T_Register="162(94)" T_Lut="344(244)">
+  <SubModule name="u_spi_driver" Register="68" Lut="100" T_Register="68(68)" T_Lut="100(100)"/>
+ </SubModule>
+</Module>
