@@ -1,0 +1,32 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_master\spi_master.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\ili9488_ctrl.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_driver.v'
+Analyzing Verilog file 'C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\top_ili9488_show_one.v'
+Compiling module 'top_ili9488_show_one'("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\top_ili9488_show_one.v":1)
+Compiling module 'ili9488_ctrl'("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\ili9488_ctrl.v":1)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 18("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\ili9488_ctrl.v":312)
+Compiling module 'spi_driver'("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_driver.v":1)
+Compiling module '**'("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_master\spi_master.v":523)
+NOTE  (EX0101) : Current top module is "top_ili9488_show_one"
+WARN  (EX0211) : The output port "MISO_SLAVE" of module "SPI_MASTER_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_master\spi_master.v":523)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\gwsynthesis\test_4_ili9488_vertical.vg" completed
+[100%] Generate report file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\gwsynthesis\test_4_ili9488_vertical_syn.rpt.html" completed
+GowinSynthesis finish

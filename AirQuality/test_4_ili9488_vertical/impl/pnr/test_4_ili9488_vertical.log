@@ -1,0 +1,31 @@
+Reading netlist file: "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\gwsynthesis\test_4_ili9488_vertical.vg"
+Parsing netlist file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\gwsynthesis\test_4_ili9488_vertical.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\src\spi_write_command_ip_test1.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'sys_clk' was determined to be a clock but was not created.
+WARN  (TA1132) :  'u_ili9488_ctrl/u_spi_driver/your_instance_name/u_spi_master/n317_13' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\pnr\test_4_ili9488_vertical.power.html" completed
+Generate file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\pnr\test_4_ili9488_vertical.pin.html" completed
+Generate file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\pnr\test_4_ili9488_vertical.rpt.html" completed
+Generate file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\pnr\test_4_ili9488_vertical.rpt.txt" completed
+Generate file "C:\Project\gowin_fpga\github_project\AirQuality\test_4_ili9488_vertical\impl\pnr\test_4_ili9488_vertical.tr.html" completed
+Fri May  8 14:28:15 2026
+

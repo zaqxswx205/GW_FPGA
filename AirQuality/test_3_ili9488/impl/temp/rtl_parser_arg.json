@@ -2,15 +2,15 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "C:/Project/gowin_fpga/github_project/AirQuality/test_3_ili9488/src/spi_master/spi_master.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "C:/Project/gowin_fpga/github_project/AirQuality/test_3_ili9488/src/ili9488_ctrl.v",
    "Type" : "verilog"
   },
   {
    "Path" : "C:/Project/gowin_fpga/github_project/AirQuality/test_3_ili9488/src/spi_driver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Project/gowin_fpga/github_project/AirQuality/test_3_ili9488/src/spi_master/spi_master.v",
    "Type" : "verilog"
   },
   {
