@@ -1,0 +1,31 @@
+Reading netlist file: "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\gwsynthesis\test_5_ili9488_pms9103_ze08.vg"
+Parsing netlist file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\gwsynthesis\test_5_ili9488_pms9103_ze08.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_write_command_ip_test1.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'sys_clk' was determined to be a clock but was not created.
+WARN  (TA1132) :  'u_ili9488_ctrl/u_spi_driver/your_instance_name/u_spi_master/n317_13' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\test_5_ili9488_pms9103_ze08.power.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\test_5_ili9488_pms9103_ze08.pin.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\test_5_ili9488_pms9103_ze08.rpt.html" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\test_5_ili9488_pms9103_ze08.rpt.txt" completed
+Generate file "D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\test_5_ili9488_pms9103_ze08.tr.html" completed
+Sat May  9 22:51:43 2026
+

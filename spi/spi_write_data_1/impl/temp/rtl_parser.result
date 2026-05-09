@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/spi/spi_write_data_1/src/spi_driver.v",
+  "InstLine" : 1,
+  "InstName" : "spi_driver",
+  "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/spi/spi_write_data_1/src/spi_driver.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "spi_driver"
+ }
+]

@@ -1,0 +1,17 @@
+-d D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\gwsynthesis\test_5_ili9488_pms9103_ze08.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_write_command_ip_test1.cst
+-cfg D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000

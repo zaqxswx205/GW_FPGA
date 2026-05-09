@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_master\spi_master.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ili9488_ctrl.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\pms9103_data.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\uart_rx.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ze08_ch2o_data.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="global_freq" value="50.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\impl\gwsynthesis\test_5_ili9488_pms9103_ze08.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="vcc" value="1.2"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
