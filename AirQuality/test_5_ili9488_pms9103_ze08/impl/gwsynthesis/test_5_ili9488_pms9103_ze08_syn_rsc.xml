@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top_ili9488_show_one" Register="113" Lut="4" T_Register="800(113)" T_Alu="48(0)" T_Lut="1388(4)">
- <SubModule name="u_pms9103_data" Register="282" Alu="32" Lut="320" T_Register="324(282)" T_Alu="32(32)" T_Lut="373(320)">
+<Module name="top_ili9488_show_one" Register="126" Lut="5" T_Register="913(126)" T_Alu="64(0)" T_Lut="1532(5)">
+ <SubModule name="u_pms9103_data" Register="282" Alu="32" Lut="322" T_Register="324(282)" T_Alu="32(32)" T_Lut="375(322)">
   <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
  </SubModule>
  <SubModule name="u_ze08_ch2o_data" Register="50" Alu="16" Lut="95" T_Register="92(50)" T_Alu="16(16)" T_Lut="148(95)">
   <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
  </SubModule>
- <SubModule name="u_ili9488_ctrl" Register="203" Lut="765" T_Register="271(203)" T_Lut="863(765)">
-  <SubModule name="u_spi_driver" Register="68" Lut="98" T_Register="68(68)" T_Lut="98(98)"/>
+ <SubModule name="u_sc8_driver" Register="45" Alu="16" Lut="61" T_Register="87(45)" T_Alu="16(16)" T_Lut="114(61)">
+  <SubModule name="u_uart_rx" Register="42" Lut="53" T_Register="42(42)" T_Lut="53(53)"/>
+ </SubModule>
+ <SubModule name="u_ili9488_ctrl" Register="216" Lut="791" T_Register="284(216)" T_Lut="890(791)">
+  <SubModule name="u_spi_driver" Register="68" Lut="99" T_Register="68(68)" T_Lut="99(99)"/>
  </SubModule>
 </Module>

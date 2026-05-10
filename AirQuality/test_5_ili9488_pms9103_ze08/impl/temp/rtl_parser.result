@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
-    "InstLine" : 37,
+    "InstLine" : 40,
     "InstName" : "u_pms9103_data",
     "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/pms9103_data.v",
     "ModuleLine" : 1,
@@ -27,7 +27,7 @@
    },
    {
     "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
-    "InstLine" : 50,
+    "InstLine" : 53,
     "InstName" : "u_ze08_ch2o_data",
     "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/ze08_ch2o_data.v",
     "ModuleLine" : 1,
@@ -45,7 +45,25 @@
    },
    {
     "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
-    "InstLine" : 91,
+    "InstLine" : 61,
+    "InstName" : "u_sc8_driver",
+    "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/sc8_driver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "sc8_driver",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/sc8_driver.v",
+      "InstLine" : 87,
+      "InstName" : "u_uart_rx",
+      "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/uart_rx.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "uart_rx"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
+    "InstLine" : 107,
     "InstName" : "u_ili9488_ctrl",
     "ModuleFile" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/ili9488_ctrl.v",
     "ModuleLine" : 1,

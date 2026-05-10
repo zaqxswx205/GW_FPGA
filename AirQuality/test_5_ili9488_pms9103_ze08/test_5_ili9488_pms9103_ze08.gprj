@@ -7,6 +7,7 @@
     <FileList>
         <File path="src/ili9488_ctrl.v" type="file.verilog" enable="1"/>
         <File path="src/pms9103_data.v" type="file.verilog" enable="1"/>
+        <File path="src/sc8_driver.v" type="file.verilog" enable="1"/>
         <File path="src/spi_driver.v" type="file.verilog" enable="1"/>
         <File path="src/spi_master/spi_master.v" type="file.verilog" enable="1"/>
         <File path="src/top_ili9488_show_one.v" type="file.verilog" enable="1"/>

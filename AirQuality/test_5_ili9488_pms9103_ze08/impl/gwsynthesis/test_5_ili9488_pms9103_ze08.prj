@@ -4,13 +4,14 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
-        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_master\spi_master.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ili9488_ctrl.v" type="verilog"/>
-        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v" type="verilog"/>
-        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\pms9103_data.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_master\spi_master.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\uart_rx.v" type="verilog"/>
         <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ze08_ch2o_data.v" type="verilog"/>
+        <File path="D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\sc8_driver.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

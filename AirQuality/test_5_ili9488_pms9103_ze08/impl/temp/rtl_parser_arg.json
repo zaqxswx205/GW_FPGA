@@ -2,11 +2,11 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/spi_master/spi_master.v",
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/ili9488_ctrl.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/ili9488_ctrl.v",
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/pms9103_data.v",
    "Type" : "verilog"
   },
   {
@@ -14,11 +14,11 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/spi_master/spi_master.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/pms9103_data.v",
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/top_ili9488_show_one.v",
    "Type" : "verilog"
   },
   {
@@ -27,6 +27,10 @@
   },
   {
    "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/ze08_ch2o_data.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Project/fpga/gw-fpga/GW_FPGA/AirQuality/test_5_ili9488_pms9103_ze08/src/sc8_driver.v",
    "Type" : "verilog"
   }
  ],

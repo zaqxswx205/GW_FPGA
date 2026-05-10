@@ -1,17 +1,20 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_master\spi_master.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ili9488_ctrl.v'
-Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v'
-Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\pms9103_data.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_master\spi_master.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\uart_rx.v'
 Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ze08_ch2o_data.v'
+Analyzing Verilog file 'D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\sc8_driver.v'
 Compiling module 'top_ili9488_show_one'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\top_ili9488_show_one.v":1)
 Compiling module 'pms9103_data'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\pms9103_data.v":1)
 Compiling module 'uart_rx'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\uart_rx.v":1)
 WARN  (EX3073) : Port 'rx_clk' remains unconnected for this instance("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ze08_ch2o_data.v":115)
 Compiling module 'ze08_ch2o_data'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ze08_ch2o_data.v":1)
+WARN  (EX3073) : Port 'rx_clk' remains unconnected for this instance("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\sc8_driver.v":94)
+Compiling module 'sc8_driver'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\sc8_driver.v":1)
 Compiling module 'ili9488_ctrl'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ili9488_ctrl.v":1)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 18("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\ili9488_ctrl.v":321)
 Compiling module 'spi_driver'("D:\Project\fpga\gw-fpga\GW_FPGA\AirQuality\test_5_ili9488_pms9103_ze08\src\spi_driver.v":1)

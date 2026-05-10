@@ -3,6 +3,7 @@ module top_ili9488_show_one (
     input  wire sys_rst_n,
     input  wire pms_rx,
     input  wire ze08_rx,
+    input  wire sc8_rx,
     output wire spi_sclk,
     output wire spi_mosi,
     output wire spi_cs_n,
@@ -26,6 +27,7 @@ reg [15:0] voc;
 
 wire        sensor_data_valid;
 wire        ze08_data_valid;
+wire        sc8_data_valid;
 wire [15:0] sensor_pm1_0;
 wire [15:0] sensor_pm2_5;
 wire [15:0] sensor_pm10;
@@ -33,6 +35,7 @@ wire [15:0] sensor_cnt_03um;
 wire [15:0] sensor_cnt_05um;
 wire [15:0] sensor_cnt_10um;
 wire [15:0] ze08_ch2o;
+wire [15:0] sc8_co2;
 
 pms9103_data u_pms9103_data (
     .sys_clk(sys_clk),
@@ -53,6 +56,14 @@ ze08_ch2o_data u_ze08_ch2o_data (
     .rx(ze08_rx),
     .data_ready(ze08_data_valid),
     .ch2o_data(ze08_ch2o)
+);
+
+sc8_driver u_sc8_driver (
+    .sys_clk(sys_clk),
+    .sys_rst_n(sys_rst_n),
+    .rx(sc8_rx),
+    .data_ready(sc8_data_valid),
+    .co2_data(sc8_co2)
 );
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
@@ -83,6 +94,11 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
 
         if (ze08_data_valid && !sensor_update_req) begin
             ch2o <= ze08_ch2o;
+            sensor_update_req <= 1'b1;
+        end
+
+        if (sc8_data_valid && !sensor_update_req) begin
+            co2 <= sc8_co2;
             sensor_update_req <= 1'b1;
         end
     end
